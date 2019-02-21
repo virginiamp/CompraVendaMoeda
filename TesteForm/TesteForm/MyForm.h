@@ -154,10 +154,13 @@ namespace TesteForm {
 		String ^ CAMPO_OBRIGATORIO = L"* campo obrigatório";
 		String ^ FORMATO_MOEDA = L"Formato Ex.: 1.000,00";
 		String ^ CAMPO_NUMERICO = L"Campo deve ser numérico";
+		String ^ POSITIVO = L"valor deve ser positivo";
 		String ^ VAZIO = L"";	
 		String ^ VENDA_MAIORQ_COMPRA = L"Qtd vendida > Qtd comprada";
+private: System::Windows::Forms::Panel^  panel5;
 
-		String ^ numero_real = "^[0-9]+(\.[0-9]{3,3})*(,[0-9]+)*$";
+
+		String ^ numero_real = "^\-{0,1}[0-9]+(\.[0-9]{3,3})*(,[0-9]+)*$";
 
 #pragma region Windows Form Designer generated code
 
@@ -254,6 +257,7 @@ namespace TesteForm {
 			this->errorProviderBox8 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox9 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox10 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -268,13 +272,14 @@ namespace TesteForm {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox10))->BeginInit();
+			this->panel5->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(613, 984);
+			this->button1->Location = System::Drawing::Point(617, 909);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(109, 40);
 			this->button1->TabIndex = 1;
@@ -286,7 +291,7 @@ namespace TesteForm {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(729, 984);
+			this->button2->Location = System::Drawing::Point(733, 909);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(133, 39);
 			this->button2->TabIndex = 37;
@@ -299,7 +304,7 @@ namespace TesteForm {
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton1->Location = System::Drawing::Point(19, 16);
+			this->radioButton1->Location = System::Drawing::Point(7, 19);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(323, 23);
 			this->radioButton1->TabIndex = 84;
@@ -314,7 +319,7 @@ namespace TesteForm {
 			this->radioButton2->Checked = true;
 			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton2->Location = System::Drawing::Point(11, 18);
+			this->radioButton2->Location = System::Drawing::Point(7, 21);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(312, 23);
 			this->radioButton2->TabIndex = 85;
@@ -327,7 +332,7 @@ namespace TesteForm {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(318, 39);
+			this->textBox1->Location = System::Drawing::Point(308, 14);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(121, 27);
 			this->textBox1->TabIndex = 3;
@@ -338,7 +343,7 @@ namespace TesteForm {
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(485, 96);
+			this->textBox2->Location = System::Drawing::Point(475, 76);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(123, 27);
 			this->textBox2->TabIndex = 5;
@@ -349,7 +354,7 @@ namespace TesteForm {
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(318, 175);
+			this->textBox3->Location = System::Drawing::Point(308, 150);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(121, 27);
 			this->textBox3->TabIndex = 7;
@@ -361,7 +366,7 @@ namespace TesteForm {
 			this->textBox4->BackColor = System::Drawing::SystemColors::Window;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(409, 57);
+			this->textBox4->Location = System::Drawing::Point(397, 60);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(117, 27);
 			this->textBox4->TabIndex = 9;
@@ -372,7 +377,7 @@ namespace TesteForm {
 			// 
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(318, 27);
+			this->textBox5->Location = System::Drawing::Point(308, 11);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(121, 27);
 			this->textBox5->TabIndex = 11;
@@ -381,11 +386,11 @@ namespace TesteForm {
 			// 
 			// textBox6
 			// 
-			this->textBox6->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox6->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->textBox6->Enabled = false;
 			this->textBox6->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(600, 57);
+			this->textBox6->Location = System::Drawing::Point(588, 60);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(111, 27);
 			this->textBox6->TabIndex = 34;
@@ -394,11 +399,11 @@ namespace TesteForm {
 			// 
 			// textBox7
 			// 
-			this->textBox7->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox7->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->textBox7->Enabled = false;
 			this->textBox7->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox7->Location = System::Drawing::Point(697, 96);
+			this->textBox7->Location = System::Drawing::Point(687, 76);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(123, 27);
 			this->textBox7->TabIndex = 67;
@@ -407,11 +412,11 @@ namespace TesteForm {
 			// 
 			// textBox8
 			// 
-			this->textBox8->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox8->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->textBox8->Enabled = false;
 			this->textBox8->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox8->Location = System::Drawing::Point(406, 44);
+			this->textBox8->Location = System::Drawing::Point(394, 47);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(120, 27);
 			this->textBox8->TabIndex = 78;
@@ -420,11 +425,11 @@ namespace TesteForm {
 			// 
 			// textBox9
 			// 
-			this->textBox9->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox9->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->textBox9->Enabled = false;
 			this->textBox9->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox9->Location = System::Drawing::Point(406, 94);
+			this->textBox9->Location = System::Drawing::Point(394, 97);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(120, 27);
 			this->textBox9->TabIndex = 79;
@@ -433,11 +438,11 @@ namespace TesteForm {
 			// 
 			// textBox10
 			// 
-			this->textBox10->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox10->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->textBox10->Enabled = false;
 			this->textBox10->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox10->Location = System::Drawing::Point(600, 94);
+			this->textBox10->Location = System::Drawing::Point(588, 97);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(111, 27);
 			this->textBox10->TabIndex = 90;
@@ -449,7 +454,7 @@ namespace TesteForm {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(13, 42);
+			this->label1->Location = System::Drawing::Point(3, 17);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(248, 19);
 			this->label1->TabIndex = 2;
@@ -460,7 +465,7 @@ namespace TesteForm {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(13, 104);
+			this->label2->Location = System::Drawing::Point(3, 79);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(231, 19);
 			this->label2->TabIndex = 4;
@@ -471,7 +476,7 @@ namespace TesteForm {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(13, 180);
+			this->label3->Location = System::Drawing::Point(3, 155);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(191, 19);
 			this->label3->TabIndex = 6;
@@ -482,7 +487,7 @@ namespace TesteForm {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(20, 65);
+			this->label4->Location = System::Drawing::Point(16, 68);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(127, 19);
 			this->label4->TabIndex = 8;
@@ -493,7 +498,7 @@ namespace TesteForm {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(3, 35);
+			this->label5->Location = System::Drawing::Point(3, 19);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(182, 19);
 			this->label5->TabIndex = 10;
@@ -504,8 +509,8 @@ namespace TesteForm {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label6->Location = System::Drawing::Point(20, 121);
+			this->label6->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label6->Location = System::Drawing::Point(16, 124);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(314, 19);
 			this->label6->TabIndex = 12;
@@ -516,8 +521,8 @@ namespace TesteForm {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label7->Location = System::Drawing::Point(17, 156);
+			this->label7->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label7->Location = System::Drawing::Point(13, 159);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(452, 19);
 			this->label7->TabIndex = 13;
@@ -526,48 +531,47 @@ namespace TesteForm {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label8->BackColor = System::Drawing::Color::MediumAquamarine;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::Red;
-			this->label8->Location = System::Drawing::Point(611, 962);
+			this->label8->Location = System::Drawing::Point(592, 4);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(53, 19);
+			this->label8->Size = System::Drawing::Size(49, 19);
 			this->label8->TabIndex = 64;
-			this->label8->Text = L"           ";
+			this->label8->Text = L"          ";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label10->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label10->Location = System::Drawing::Point(610, 121);
+			this->label10->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label10->Location = System::Drawing::Point(598, 124);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(97, 19);
+			this->label10->Size = System::Drawing::Size(0, 19);
 			this->label10->TabIndex = 17;
-			this->label10->Text = L"                      ";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label11->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label11->Location = System::Drawing::Point(610, 156);
+			this->label11->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label11->Location = System::Drawing::Point(598, 159);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(101, 19);
+			this->label11->Size = System::Drawing::Size(0, 19);
 			this->label11->TabIndex = 18;
-			this->label11->Text = L"                       ";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label12->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(485, 135);
+			this->label12->Location = System::Drawing::Point(475, 115);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(0, 19);
 			this->label12->TabIndex = 21;
@@ -577,7 +581,7 @@ namespace TesteForm {
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(378, 96);
+			this->label13->Location = System::Drawing::Point(366, 99);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(26, 19);
 			this->label13->TabIndex = 38;
@@ -588,7 +592,7 @@ namespace TesteForm {
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(574, 96);
+			this->label14->Location = System::Drawing::Point(558, 99);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(20, 19);
 			this->label14->TabIndex = 39;
@@ -599,7 +603,7 @@ namespace TesteForm {
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Calibri", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label15->ForeColor = System::Drawing::Color::DarkBlue;
+			this->label15->ForeColor = System::Drawing::Color::AliceBlue;
 			this->label15->Location = System::Drawing::Point(12, 35);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(207, 19);
@@ -611,7 +615,7 @@ namespace TesteForm {
 			this->label16->AutoSize = true;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label16->Location = System::Drawing::Point(464, 178);
+			this->label16->Location = System::Drawing::Point(454, 153);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(197, 19);
 			this->label16->TabIndex = 25;
@@ -620,21 +624,20 @@ namespace TesteForm {
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label17->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label17->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->Location = System::Drawing::Point(694, 175);
+			this->label17->Location = System::Drawing::Point(684, 150);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(97, 19);
+			this->label17->Size = System::Drawing::Size(0, 19);
 			this->label17->TabIndex = 26;
-			this->label17->Text = L"                      ";
 			// 
 			// label18
 			// 
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->Location = System::Drawing::Point(638, 85);
+			this->label18->Location = System::Drawing::Point(628, 65);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(53, 38);
 			this->label18->TabIndex = 68;
@@ -645,8 +648,8 @@ namespace TesteForm {
 			this->label19->AutoSize = true;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Calibri", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label19->ForeColor = System::Drawing::Color::DarkBlue;
-			this->label19->Location = System::Drawing::Point(12, 333);
+			this->label19->ForeColor = System::Drawing::Color::AliceBlue;
+			this->label19->Location = System::Drawing::Point(12, 288);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(194, 19);
 			this->label19->TabIndex = 28;
@@ -657,7 +660,7 @@ namespace TesteForm {
 			this->label20->AutoSize = true;
 			this->label20->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label20->Location = System::Drawing::Point(473, 35);
+			this->label20->Location = System::Drawing::Point(454, 19);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(188, 19);
 			this->label20->TabIndex = 29;
@@ -668,7 +671,7 @@ namespace TesteForm {
 			this->label22->AutoSize = true;
 			this->label22->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(694, 35);
+			this->label22->Location = System::Drawing::Point(684, 19);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(97, 19);
 			this->label22->TabIndex = 31;
@@ -679,7 +682,7 @@ namespace TesteForm {
 			this->label23->AutoSize = true;
 			this->label23->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(284, 42);
+			this->label23->Location = System::Drawing::Point(274, 17);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(26, 19);
 			this->label23->TabIndex = 40;
@@ -690,7 +693,7 @@ namespace TesteForm {
 			this->label24->AutoSize = true;
 			this->label24->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label24->Location = System::Drawing::Point(568, 65);
+			this->label24->Location = System::Drawing::Point(556, 68);
 			this->label24->Name = L"label24";
 			this->label24->Size = System::Drawing::Size(26, 19);
 			this->label24->TabIndex = 33;
@@ -701,7 +704,7 @@ namespace TesteForm {
 			this->label25->AutoSize = true;
 			this->label25->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label25->Location = System::Drawing::Point(410, 96);
+			this->label25->Location = System::Drawing::Point(398, 99);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(93, 19);
 			this->label25->TabIndex = 35;
@@ -712,7 +715,7 @@ namespace TesteForm {
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(611, 96);
+			this->label26->Location = System::Drawing::Point(599, 99);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(93, 19);
 			this->label26->TabIndex = 36;
@@ -723,7 +726,7 @@ namespace TesteForm {
 			this->label27->AutoSize = true;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(398, 135);
+			this->label27->Location = System::Drawing::Point(388, 115);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(77, 19);
 			this->label27->TabIndex = 41;
@@ -734,8 +737,8 @@ namespace TesteForm {
 			this->label28->AutoSize = true;
 			this->label28->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label28->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label28->Location = System::Drawing::Point(568, 156);
+			this->label28->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label28->Location = System::Drawing::Point(556, 159);
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(26, 19);
 			this->label28->TabIndex = 42;
@@ -746,7 +749,7 @@ namespace TesteForm {
 			this->label29->AutoSize = true;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label29->Location = System::Drawing::Point(453, 99);
+			this->label29->Location = System::Drawing::Point(443, 79);
 			this->label29->Name = L"label29";
 			this->label29->Size = System::Drawing::Size(26, 19);
 			this->label29->TabIndex = 43;
@@ -757,7 +760,7 @@ namespace TesteForm {
 			this->label30->AutoSize = true;
 			this->label30->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label30->Location = System::Drawing::Point(290, 183);
+			this->label30->Location = System::Drawing::Point(280, 158);
 			this->label30->Name = L"label30";
 			this->label30->Size = System::Drawing::Size(20, 19);
 			this->label30->TabIndex = 44;
@@ -768,7 +771,7 @@ namespace TesteForm {
 			this->label31->AutoSize = true;
 			this->label31->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label31->Location = System::Drawing::Point(658, 178);
+			this->label31->Location = System::Drawing::Point(648, 153);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(26, 19);
 			this->label31->TabIndex = 45;
@@ -779,7 +782,7 @@ namespace TesteForm {
 			this->label32->AutoSize = true;
 			this->label32->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label32->Location = System::Drawing::Point(379, 63);
+			this->label32->Location = System::Drawing::Point(367, 66);
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(20, 19);
 			this->label32->TabIndex = 46;
@@ -790,7 +793,7 @@ namespace TesteForm {
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label33->Location = System::Drawing::Point(286, 35);
+			this->label33->Location = System::Drawing::Point(276, 19);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(20, 19);
 			this->label33->TabIndex = 47;
@@ -801,8 +804,8 @@ namespace TesteForm {
 			this->label34->AutoSize = true;
 			this->label34->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label34->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label34->Location = System::Drawing::Point(568, 121);
+			this->label34->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label34->Location = System::Drawing::Point(556, 124);
 			this->label34->Name = L"label34";
 			this->label34->Size = System::Drawing::Size(26, 19);
 			this->label34->TabIndex = 48;
@@ -813,7 +816,7 @@ namespace TesteForm {
 			this->label35->AutoSize = true;
 			this->label35->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label35->Location = System::Drawing::Point(658, 35);
+			this->label35->Location = System::Drawing::Point(648, 19);
 			this->label35->Name = L"label35";
 			this->label35->Size = System::Drawing::Size(26, 19);
 			this->label35->TabIndex = 49;
@@ -824,7 +827,7 @@ namespace TesteForm {
 			this->label36->AutoSize = true;
 			this->label36->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label36->Location = System::Drawing::Point(17, 194);
+			this->label36->Location = System::Drawing::Point(13, 197);
 			this->label36->Name = L"label36";
 			this->label36->Size = System::Drawing::Size(345, 19);
 			this->label36->TabIndex = 50;
@@ -835,7 +838,7 @@ namespace TesteForm {
 			this->label37->AutoSize = true;
 			this->label37->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label37->Location = System::Drawing::Point(570, 194);
+			this->label37->Location = System::Drawing::Point(558, 197);
 			this->label37->Name = L"label37";
 			this->label37->Size = System::Drawing::Size(20, 19);
 			this->label37->TabIndex = 51;
@@ -846,7 +849,7 @@ namespace TesteForm {
 			this->label38->AutoSize = true;
 			this->label38->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label38->Location = System::Drawing::Point(608, 194);
+			this->label38->Location = System::Drawing::Point(596, 197);
 			this->label38->Name = L"label38";
 			this->label38->Size = System::Drawing::Size(101, 19);
 			this->label38->TabIndex = 52;
@@ -857,7 +860,7 @@ namespace TesteForm {
 			this->label39->AutoSize = true;
 			this->label39->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label39->Location = System::Drawing::Point(658, 135);
+			this->label39->Location = System::Drawing::Point(648, 115);
 			this->label39->Name = L"label39";
 			this->label39->Size = System::Drawing::Size(26, 19);
 			this->label39->TabIndex = 70;
@@ -866,10 +869,10 @@ namespace TesteForm {
 			// label40
 			// 
 			this->label40->AutoSize = true;
-			this->label40->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label40->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label40->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label40->Location = System::Drawing::Point(694, 135);
+			this->label40->Location = System::Drawing::Point(684, 115);
 			this->label40->Name = L"label40";
 			this->label40->Size = System::Drawing::Size(0, 19);
 			this->label40->TabIndex = 71;
@@ -879,7 +882,7 @@ namespace TesteForm {
 			this->label44->AutoSize = true;
 			this->label44->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label44->Location = System::Drawing::Point(28, 52);
+			this->label44->Location = System::Drawing::Point(16, 55);
 			this->label44->Name = L"label44";
 			this->label44->Size = System::Drawing::Size(311, 19);
 			this->label44->TabIndex = 73;
@@ -890,7 +893,7 @@ namespace TesteForm {
 			this->label45->AutoSize = true;
 			this->label45->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label45->Location = System::Drawing::Point(28, 98);
+			this->label45->Location = System::Drawing::Point(16, 101);
 			this->label45->Name = L"label45";
 			this->label45->Size = System::Drawing::Size(149, 19);
 			this->label45->TabIndex = 74;
@@ -902,7 +905,7 @@ namespace TesteForm {
 			this->label46->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label46->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label46->Location = System::Drawing::Point(28, 171);
+			this->label46->Location = System::Drawing::Point(16, 174);
 			this->label46->Name = L"label46";
 			this->label46->Size = System::Drawing::Size(170, 19);
 			this->label46->TabIndex = 75;
@@ -911,15 +914,14 @@ namespace TesteForm {
 			// label50
 			// 
 			this->label50->AutoSize = true;
-			this->label50->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label50->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label50->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label50->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label50->Location = System::Drawing::Point(402, 171);
+			this->label50->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label50->Location = System::Drawing::Point(390, 174);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(97, 19);
+			this->label50->Size = System::Drawing::Size(0, 19);
 			this->label50->TabIndex = 76;
-			this->label50->Text = L"                      ";
 			// 
 			// label51
 			// 
@@ -927,7 +929,7 @@ namespace TesteForm {
 			this->label51->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label51->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label51->Location = System::Drawing::Point(361, 171);
+			this->label51->Location = System::Drawing::Point(349, 174);
 			this->label51->Name = L"label51";
 			this->label51->Size = System::Drawing::Size(26, 19);
 			this->label51->TabIndex = 77;
@@ -938,7 +940,7 @@ namespace TesteForm {
 			this->label54->AutoSize = true;
 			this->label54->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label54->Location = System::Drawing::Point(374, 52);
+			this->label54->Location = System::Drawing::Point(362, 55);
 			this->label54->Name = L"label54";
 			this->label54->Size = System::Drawing::Size(26, 19);
 			this->label54->TabIndex = 82;
@@ -949,7 +951,7 @@ namespace TesteForm {
 			this->label55->AutoSize = true;
 			this->label55->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label55->Location = System::Drawing::Point(374, 97);
+			this->label55->Location = System::Drawing::Point(362, 100);
 			this->label55->Name = L"label55";
 			this->label55->Size = System::Drawing::Size(26, 19);
 			this->label55->TabIndex = 83;
@@ -960,7 +962,7 @@ namespace TesteForm {
 			this->label56->AutoSize = true;
 			this->label56->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label56->Location = System::Drawing::Point(28, 211);
+			this->label56->Location = System::Drawing::Point(16, 214);
 			this->label56->Name = L"label56";
 			this->label56->Size = System::Drawing::Size(264, 19);
 			this->label56->TabIndex = 86;
@@ -971,7 +973,7 @@ namespace TesteForm {
 			this->label57->AutoSize = true;
 			this->label57->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label57->Location = System::Drawing::Point(360, 211);
+			this->label57->Location = System::Drawing::Point(348, 214);
 			this->label57->Name = L"label57";
 			this->label57->Size = System::Drawing::Size(20, 19);
 			this->label57->TabIndex = 87;
@@ -982,7 +984,7 @@ namespace TesteForm {
 			this->label58->AutoSize = true;
 			this->label58->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label58->Location = System::Drawing::Point(398, 211);
+			this->label58->Location = System::Drawing::Point(386, 214);
 			this->label58->Name = L"label58";
 			this->label58->Size = System::Drawing::Size(101, 19);
 			this->label58->TabIndex = 88;
@@ -993,7 +995,7 @@ namespace TesteForm {
 			this->label59->AutoSize = true;
 			this->label59->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label59->Location = System::Drawing::Point(537, 85);
+			this->label59->Location = System::Drawing::Point(525, 88);
 			this->label59->Name = L"label59";
 			this->label59->Size = System::Drawing::Size(53, 38);
 			this->label59->TabIndex = 91;
@@ -1002,10 +1004,10 @@ namespace TesteForm {
 			// label60
 			// 
 			this->label60->AutoSize = true;
-			this->label60->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label60->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label60->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label60->Location = System::Drawing::Point(408, 133);
+			this->label60->Location = System::Drawing::Point(396, 136);
 			this->label60->Name = L"label60";
 			this->label60->Size = System::Drawing::Size(0, 19);
 			this->label60->TabIndex = 92;
@@ -1015,7 +1017,7 @@ namespace TesteForm {
 			this->label61->AutoSize = true;
 			this->label61->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label61->Location = System::Drawing::Point(321, 133);
+			this->label61->Location = System::Drawing::Point(309, 136);
 			this->label61->Name = L"label61";
 			this->label61->Size = System::Drawing::Size(77, 19);
 			this->label61->TabIndex = 93;
@@ -1026,7 +1028,7 @@ namespace TesteForm {
 			this->label62->AutoSize = true;
 			this->label62->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label62->Location = System::Drawing::Point(560, 133);
+			this->label62->Location = System::Drawing::Point(548, 136);
 			this->label62->Name = L"label62";
 			this->label62->Size = System::Drawing::Size(26, 19);
 			this->label62->TabIndex = 94;
@@ -1035,14 +1037,13 @@ namespace TesteForm {
 			// label63
 			// 
 			this->label63->AutoSize = true;
-			this->label63->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label63->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label63->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label63->Location = System::Drawing::Point(597, 133);
+			this->label63->Location = System::Drawing::Point(595, 136);
 			this->label63->Name = L"label63";
-			this->label63->Size = System::Drawing::Size(97, 19);
+			this->label63->Size = System::Drawing::Size(0, 19);
 			this->label63->TabIndex = 95;
-			this->label63->Text = L"                      ";
 			// 
 			// label65
 			// 
@@ -1050,7 +1051,7 @@ namespace TesteForm {
 			this->label65->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label65->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label65->Location = System::Drawing::Point(542, 171);
+			this->label65->Location = System::Drawing::Point(530, 174);
 			this->label65->Name = L"label65";
 			this->label65->Size = System::Drawing::Size(43, 19);
 			this->label65->TabIndex = 97;
@@ -1059,15 +1060,14 @@ namespace TesteForm {
 			// label66
 			// 
 			this->label66->AutoSize = true;
-			this->label66->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label66->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label66->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label66->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label66->Location = System::Drawing::Point(607, 171);
+			this->label66->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label66->Location = System::Drawing::Point(595, 174);
 			this->label66->Name = L"label66";
-			this->label66->Size = System::Drawing::Size(97, 19);
+			this->label66->Size = System::Drawing::Size(0, 19);
 			this->label66->TabIndex = 98;
-			this->label66->Text = L"                      ";
 			// 
 			// comboBox1
 			// 
@@ -1075,7 +1075,7 @@ namespace TesteForm {
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"porcentagem (%)", L"Reais (R$)" });
-			this->comboBox1->Location = System::Drawing::Point(207, 57);
+			this->comboBox1->Location = System::Drawing::Point(195, 60);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(152, 27);
 			this->comboBox1->TabIndex = 65;
@@ -1088,7 +1088,7 @@ namespace TesteForm {
 				static_cast<System::Byte>(0)));
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"em Reais (R$)", L"em moeda" });
-			this->comboBox2->Location = System::Drawing::Point(318, 96);
+			this->comboBox2->Location = System::Drawing::Point(308, 76);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(121, 27);
 			this->comboBox2->TabIndex = 66;
@@ -1097,12 +1097,12 @@ namespace TesteForm {
 			// 
 			// comboBox3
 			// 
-			this->comboBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->comboBox3->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox3->FormattingEnabled = true;
 			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"em Reais (R$)", L"em moeda" });
-			this->comboBox3->Location = System::Drawing::Point(207, 94);
+			this->comboBox3->Location = System::Drawing::Point(195, 97);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(152, 27);
 			this->comboBox3->TabIndex = 89;
@@ -1110,6 +1110,7 @@ namespace TesteForm {
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->label35);
@@ -1117,14 +1118,15 @@ namespace TesteForm {
 			this->panel1->Controls->Add(this->label22);
 			this->panel1->Controls->Add(this->label20);
 			this->panel1->Controls->Add(this->textBox5);
-			this->panel1->Location = System::Drawing::Point(21, 355);
+			this->panel1->Location = System::Drawing::Point(21, 310);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(844, 72);
+			this->panel1->Size = System::Drawing::Size(844, 57);
 			this->panel1->TabIndex = 99;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel1_Paint);
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel2->Controls->Add(this->textBox8);
 			this->panel2->Controls->Add(this->comboBox3);
@@ -1148,13 +1150,14 @@ namespace TesteForm {
 			this->panel2->Controls->Add(this->label46);
 			this->panel2->Controls->Add(this->label45);
 			this->panel2->Controls->Add(this->label44);
-			this->panel2->Location = System::Drawing::Point(21, 433);
+			this->panel2->Location = System::Drawing::Point(21, 373);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(844, 253);
 			this->panel2->TabIndex = 100;
 			// 
 			// panel3
 			// 
+			this->panel3->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel3->Controls->Add(this->textBox4);
 			this->panel3->Controls->Add(this->comboBox1);
@@ -1176,13 +1179,14 @@ namespace TesteForm {
 			this->panel3->Controls->Add(this->label10);
 			this->panel3->Controls->Add(this->label6);
 			this->panel3->Controls->Add(this->label7);
-			this->panel3->Location = System::Drawing::Point(21, 692);
+			this->panel3->Location = System::Drawing::Point(21, 632);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(844, 234);
 			this->panel3->TabIndex = 101;
 			// 
 			// panel4
 			// 
+			this->panel4->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel4->Controls->Add(this->label1);
 			this->panel4->Controls->Add(this->comboBox2);
@@ -1205,7 +1209,7 @@ namespace TesteForm {
 			this->panel4->Controls->Add(this->label16);
 			this->panel4->Location = System::Drawing::Point(21, 57);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(844, 223);
+			this->panel4->Size = System::Drawing::Size(844, 194);
 			this->panel4->TabIndex = 102;
 			// 
 			// errorProviderBox1
@@ -1248,26 +1252,37 @@ namespace TesteForm {
 			// 
 			this->errorProviderBox10->ContainerControl = this;
 			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::MediumAquamarine;
+			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel5->Controls->Add(this->label8);
+			this->panel5->Location = System::Drawing::Point(21, 872);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(844, 31);
+			this->panel5->TabIndex = 103;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->AutoScrollMargin = System::Drawing::Size(2, 10);
-			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(934, 690);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->ClientSize = System::Drawing::Size(903, 867);
+			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->label19);
 			this->Name = L"MyForm";
 			this->ShowIcon = false;
-			this->Text = L"Compra e Venda de Moeda Virtual";
+			this->Text = L"Compra e Venda de Moeda Virtual - pequenos valores (não inclui I.R.)";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -1287,6 +1302,8 @@ namespace TesteForm {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox10))->EndInit();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1394,17 +1411,19 @@ namespace TesteForm {
 		 double valor = 0;
 
 		 erroBox1 = inicializaErros_Resultados(1);
+		 limpaResultFinais();
+		 limpaResultFinais2();
 
 		 if (!String::IsNullOrEmpty(this->textBox1->Text)) { // checa se vazio
 			 if (Regex::IsMatch(this->textBox1->Text, numero_real)) { //checa se numero real
-				 moedaR = Convert::ToDouble(this->textBox1->Text);
-				 if (moedaR != 0) {
-					 montanteR = checaTextBox(2, 12, moedaR, "{0,12:N5}");
-					 qtd_moeda = checaTextBox(7, 40, moedaR, "{0,12:N2}");
-					 qtd_reais = qtd_moeda * moedaR;
-					 taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
-					 lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
-					 lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
+				 if(Convert::ToDouble(this->textBox1->Text) > 0){
+					moedaR = Convert::ToDouble(this->textBox1->Text);
+					montanteR = checaTextBox(2, 12, moedaR, "{0,12:N5}");
+					qtd_moeda = checaTextBox(7, 40, moedaR, "{0,12:N2}");
+					qtd_reais = qtd_moeda * moedaR;
+					taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
+					lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
+					lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
 				 }
 			 }
 		 }
@@ -1421,12 +1440,12 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox2->Text)) { // checa se vazio
 			 if (Regex::IsMatch(this->textBox2->Text, numero_real)) { //checa se numero real
-				 montanteR = Convert::ToDouble(this->textBox2->Text);
-				 if (montanteR != 0) {
-					 lucroR = checaTextBox(6, 26, montanteR, "{0,12:N5}");
-					 moedaR = checaTextBox(1, 12, montanteR, "{0,12:N5}");
-					 taxaC = checaTextBox(3, 17, montanteR, "{0,12:N2}");
-					 lucro = checaTextBox(4, 25, montanteR, "{0,12:N2}");
+				 if(Convert::ToDouble(this->textBox2->Text) > 0){
+					montanteR = Convert::ToDouble(this->textBox2->Text);
+					lucroR = checaTextBox(6, 26, montanteR, "{0,12:N5}");
+					moedaR = checaTextBox(1, 12, montanteR, "{0,12:N5}");
+					taxaC = checaTextBox(3, 17, montanteR, "{0,12:N2}");
+					lucro = checaTextBox(4, 25, montanteR, "{0,12:N2}");
 				 }
 			 }
 		 }
@@ -1441,9 +1460,11 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox3->Text)) {
 			 if (Regex::IsMatch(this->textBox3->Text, numero_real)) {
-				 taxaC = Convert::ToDouble(this->textBox3->Text);
-				 montanteR = checaTextBox(2, 17, taxaC, "{0,12:N2}");
-				 qtd_reais = checaTextBox(7, 17, taxaC, "{0,12:N2}");
+				 if (Convert::ToDouble(this->textBox3->Text)> 0) {
+					 taxaC = Convert::ToDouble(this->textBox3->Text);
+					 montanteR = checaTextBox(2, 17, taxaC, "{0,12:N2}");
+					 qtd_reais = checaTextBox(7, 17, taxaC, "{0,12:N2}");
+				 }
 			 }
 		 }
 	}
@@ -1457,9 +1478,11 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox4->Text)) {
 			 if (Regex::IsMatch(this->textBox4->Text, numero_real)) {
-				 lucro = Convert::ToDouble(this->textBox4->Text);
-				 montanteR = checaTextBox(2, 25, lucro, "{0,12:N2}");
-				 qtd_reais = checaTextBox(7, 25, lucro, "{0,12:N2}");
+				 if (Convert::ToDouble(this->textBox4->Text) > 0) {
+					 lucro = Convert::ToDouble(this->textBox4->Text);
+					 montanteR = checaTextBox(2, 25, lucro, "{0,12:N2}");
+					 qtd_reais = checaTextBox(7, 25, lucro, "{0,12:N2}");
+				 }
 			 }
 		 }
 	}
@@ -1467,12 +1490,16 @@ namespace TesteForm {
 	System::Void textBox5_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 
 		 erroBox5 = inicializaErros_Resultados(5);
-
+		 limpaResultParciais(5);
+		 /*
 		 if (!String::IsNullOrEmpty(this->textBox5->Text)) {
 			 if (Regex::IsMatch(this->textBox5->Text, numero_real)) {
-				 limpaResultParciais(5);
+				 if (Convert::ToDouble(this->textBox5->Text) > 0) {
+					 limpaResultParciais(5);
+				 }
 			 }
 		 }
+		 */
 	}
 	
 	System::Void textBox6_TextChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -1484,9 +1511,11 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox6->Text)) {
 			 if (Regex::IsMatch(this->textBox6->Text, numero_real)) {
-				 lucroR = Convert::ToDouble(this->textBox6->Text);
-				 montanteR = checaTextBox(2, 26, lucroR, "{0,12:N5}");
-				 qtd_reais = checaTextBox(7, 26, lucroR, "{0,12:N5}");
+				 if (Convert::ToDouble(this->textBox6->Text) > 0) {
+					 lucroR = Convert::ToDouble(this->textBox6->Text);
+					 montanteR = checaTextBox(2, 26, lucroR, "{0,12:N5}");
+					 qtd_reais = checaTextBox(7, 26, lucroR, "{0,12:N5}");
+				 }
 			 }
 		 }
 	}
@@ -1503,13 +1532,13 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox7->Text)) {
 			 if (Regex::IsMatch(this->textBox7->Text, numero_real)) {
-				 qtd_moeda = Convert::ToDouble(this->textBox7->Text);
-				 if (qtd_moeda != 0) {
-					 moedaR = checaTextBox(1, 40, qtd_moeda, "{0,12:N2}");
-					 qtd_reais = moedaR * qtd_moeda;
-					 taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
-					 lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
-					 lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
+				 if(Convert::ToDouble(this->textBox7->Text) > 0){
+					qtd_moeda = Convert::ToDouble(this->textBox7->Text);
+					moedaR = checaTextBox(1, 40, qtd_moeda, "{0,12:N2}");
+					qtd_reais = moedaR * qtd_moeda;
+					taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
+					lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
+					lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
 				 }
 			 }
 		 }
@@ -1524,9 +1553,11 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox8->Text)) {
 			 if (Regex::IsMatch(this->textBox8->Text, numero_real)) {
-				 moedaV = Convert::ToDouble(this->textBox8->Text);
-				 qtd_moedaV = checaTextBox(9, 60, moedaV, "{0,12:N5}");
-				 qtd_reaisV = checaTextBox(10, 63, moedaV, "{0,12:N2}");
+				 if (Convert::ToDouble(this->textBox8->Text) > 0) {
+					 moedaV = Convert::ToDouble(this->textBox8->Text);
+					 qtd_moedaV = checaTextBox(9, 60, moedaV, "{0,12:N5}");
+					 qtd_reaisV = checaTextBox(10, 63, moedaV, "{0,12:N2}");
+				 }
 			 }
 		 }
 	}
@@ -1539,9 +1570,9 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox9->Text)) {
 			 if (Regex::IsMatch(this->textBox9->Text, numero_real)) {
-				 montanteV = Convert::ToDouble(this->textBox9->Text);
-				 if (montanteV != 0) {
-					 qtd_moedaV = checaTextBox(8, 60, montanteV, "{0,12:N5}");
+				 if(Convert::ToDouble(this->textBox9->Text) > 0){
+					montanteV = Convert::ToDouble(this->textBox9->Text);
+					qtd_moedaV = checaTextBox(8, 60, montanteV, "{0,12:N5}");
 				 }
 			 }
 		 }
@@ -1555,8 +1586,8 @@ namespace TesteForm {
 
 		 if (!String::IsNullOrEmpty(this->textBox10->Text)) {
 			 if (Regex::IsMatch(this->textBox10->Text, numero_real)) {
-				 montanteVM = Convert::ToDouble(this->textBox10->Text);
-				 if (montanteVM != 0) {
+				 if(Convert::ToDouble(this->textBox10->Text) > 0){
+					 montanteVM = Convert::ToDouble(this->textBox10->Text);
 					 qtd_reaisV = checaTextBox(8, 63, montanteVM, "{0,12:N2}");
 				 }
 			 }
@@ -1629,7 +1660,7 @@ namespace TesteForm {
 		case 2:
 			if (hd == 0) { // desabilita textBox2
 				textBox2->Enabled = false;
-				textBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox2->BackColor = System::Drawing::Color::MediumAquamarine;
 				textBox2->Text = "";
 				erroBox2 = imprimeErros(2, "");
 				limpaResultParciais(2);
@@ -1645,7 +1676,7 @@ namespace TesteForm {
 		case 4:
 			if (hd == 0) { // desabilita textBox4
 				textBox4->Enabled = false;
-				textBox4->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox4->BackColor = System::Drawing::Color::MediumAquamarine;
 				textBox4->Text = "";
 				erroBox4 = imprimeErros(4, "");
 				limpaResultParciais(4);
@@ -1658,7 +1689,7 @@ namespace TesteForm {
 		case 6:
 			if (hd == 0) { // desabilita textBox6
 				textBox6->Enabled = false;
-				textBox6->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox6->BackColor = System::Drawing::Color::MediumAquamarine;
 				textBox6->Text = "";
 				erroBox6 = imprimeErros(6, "");
 				limpaResultParciais(6);
@@ -1671,7 +1702,7 @@ namespace TesteForm {
 		case 7:
 			if (hd == 0) { // desabilita textBox7
 				textBox7->Enabled = false;
-				textBox7->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox7->BackColor = System::Drawing::Color::MediumAquamarine;
 				textBox7->Text = "";
 				erroBox7 = imprimeErros(7, "");
 				limpaResultParciais(7);
@@ -1688,7 +1719,7 @@ namespace TesteForm {
 			if (hd == 0) { // desabilita textBox8
 				textBox8->Text = L"";
 				textBox8->Enabled = false;
-				textBox8->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox8->BackColor = System::Drawing::Color::MediumAquamarine;
 				erroBox8 = imprimeErros(8, "");
 				limpaResultParciais(8);
 			}
@@ -1702,7 +1733,7 @@ namespace TesteForm {
 			if (hd == 0) { // desabilita textBox9
 				textBox9->Text = L"";
 				textBox9->Enabled = false;
-				textBox9->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox9->BackColor = System::Drawing::Color::MediumAquamarine;
 				erroBox9 = imprimeErros(9, "");
 				limpaResultParciais(9);
 			}
@@ -1718,7 +1749,7 @@ namespace TesteForm {
 			if (hd == 0) { // desabilita textBox10
 				textBox10->Text = L"";
 				textBox10->Enabled = false;
-				textBox10->BackColor = System::Drawing::SystemColors::ScrollBar;
+				textBox10->BackColor = System::Drawing::Color::MediumAquamarine;
 				erroBox10 = imprimeErros(10, "");
 				limpaResultParciais(10);
 			}
@@ -2196,8 +2227,8 @@ namespace TesteForm {
 				 this->label66->ForeColor = System::Drawing::Color::Red;
 			 }
 			 else {
-				 this->label50->ForeColor = System::Drawing::SystemColors::HotTrack;
-				 this->label66->ForeColor = System::Drawing::SystemColors::HotTrack;
+				 this->label50->ForeColor = System::Drawing::SystemColors::ControlText;
+				 this->label66->ForeColor = System::Drawing::SystemColors::ControlText;
 			 }
 		 }
 		 else {
@@ -2285,7 +2316,7 @@ namespace TesteForm {
 
 			 //limpa comboBox1
 			 comboBox1->Text = "";
-			 comboBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			 comboBox1->BackColor = System::Drawing::Color::MediumAquamarine;
 			 comboBox1->Enabled = false;
 
              //limpa textBox4 e seus resultados parciais
@@ -2315,7 +2346,7 @@ namespace TesteForm {
 
 			 //limpa comboBox3
 			 comboBox3->Text = "               ";
-			 comboBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
+			 comboBox3->BackColor = System::Drawing::Color::MediumAquamarine;
 			 comboBox3->Enabled = false;
 
 			 //limpa textBox8 e seus resultados parciais
@@ -2356,6 +2387,9 @@ namespace TesteForm {
 				 if ((Convert::ToDouble(this->textBox1->Text)) == 0) {
 					 erroBox1 = imprimeErros(1, CAMPO_NAO_ZERO);
 				 }
+				 if ((Convert::ToDouble(this->textBox1->Text)) < 0) {
+					 erroBox1 = imprimeErros(1, POSITIVO);
+				 }
 			 }
 		 }
 	}
@@ -2377,6 +2411,9 @@ namespace TesteForm {
 				 if (Convert::ToDouble(this->textBox2->Text) == 0) {
 					 erroBox2 = imprimeErros(2, CAMPO_NAO_ZERO);
 				 }
+				 if (Convert::ToDouble(this->textBox2->Text) < 0) {
+					 erroBox2 = imprimeErros(2, POSITIVO);
+				 }
 			 }
 		 }
 	}
@@ -2389,6 +2426,11 @@ namespace TesteForm {
 			 if (!Regex::IsMatch(this->textBox3->Text, numero_real)) {
 				 erroBox3 = imprimeErros(3, CAMPO_NUMERICO);
 			 }
+			 else {
+				 if (Convert::ToDouble(this->textBox3->Text) < 0) {
+					 erroBox3 = imprimeErros(3, POSITIVO);
+				 }
+			 }
 		 }
 	}
 	
@@ -2399,6 +2441,11 @@ namespace TesteForm {
 		 if (!String::IsNullOrEmpty(this->textBox4->Text)) {
 			 if (!Regex::IsMatch(this->textBox4->Text, numero_real)) {
 				 erroBox4 = imprimeErros(4, CAMPO_NUMERICO);
+			 }
+			 else {
+				 if (Convert::ToDouble(this->textBox4->Text) < 0) {
+					 erroBox4 = imprimeErros(4, POSITIVO);
+				 }
 			 }
 		 }
 	}
@@ -2411,6 +2458,11 @@ namespace TesteForm {
 			if (!Regex::IsMatch(this->textBox5->Text, numero_real)) {
 				erroBox5 = imprimeErros(5, CAMPO_NUMERICO);
 			}
+			else {
+				if (Convert::ToDouble(this->textBox5->Text) < 0) {
+					erroBox5 = imprimeErros(5, POSITIVO);
+				}
+			}
 		}
 	}
 
@@ -2421,6 +2473,11 @@ namespace TesteForm {
 		 if (!String::IsNullOrEmpty(this->textBox6->Text)) {
 			 if (!Regex::IsMatch(this->textBox6->Text, numero_real)) {
 				 erroBox6 = imprimeErros(6, FORMATO_MOEDA);
+			 }
+			 else {
+				 if (Convert::ToDouble(this->textBox6->Text) < 0) {
+					 erroBox6 = imprimeErros(6, POSITIVO);
+				 }
 			 }
 		 }
 	}
@@ -2442,6 +2499,9 @@ namespace TesteForm {
 				if ((Convert::ToDouble(this->textBox7->Text)) == 0) {
 					erroBox7 = imprimeErros(7, CAMPO_NAO_ZERO);
 				}
+				if (Convert::ToDouble(this->textBox7->Text) < 0) {
+					erroBox7 = imprimeErros(7, POSITIVO);
+				}
 			}
 		}
 	}
@@ -2458,6 +2518,9 @@ namespace TesteForm {
 		 else {
 			 if (!Regex::IsMatch(this->textBox8->Text, numero_real)) {
 				 erroBox8 = imprimeErros(8, FORMATO_MOEDA);
+			 }
+			 if (Convert::ToDouble(this->textBox8->Text) < 0) {
+				 erroBox8 = imprimeErros(8, POSITIVO);
 			 }
 		 }
 	}
@@ -2479,9 +2542,12 @@ namespace TesteForm {
 				}
 				else {
 					if (Convert::ToDouble(this->textBox9->Text) == 0) {
-						 erroBox9 = imprimeErros(9, CAMPO_NAO_ZERO);
+						erroBox9 = imprimeErros(9, CAMPO_NAO_ZERO);
 					}
-					 else {
+					else {
+						if (Convert::ToDouble(this->textBox9->Text) < 0) {
+							erroBox9 = imprimeErros(9, POSITIVO);
+						}
 						if (!String::IsNullOrEmpty(this->label12->Text)) {
 							valorC = Convert::ToDouble(this->label12->Text);
 						}
@@ -2495,7 +2561,7 @@ namespace TesteForm {
 							}
 						}
 					}
-			 }
+				}
 		 }
 	}
 	
@@ -2519,6 +2585,9 @@ namespace TesteForm {
 					 erroBox10 = imprimeErros(10, CAMPO_NAO_ZERO);
 				 }
 				 else {
+					 if (Convert::ToDouble(this->textBox10->Text) < 0) {
+						 erroBox10 = imprimeErros(10, POSITIVO);
+					 }
 					 valorV = Convert::ToDouble(this->textBox10->Text);
 					 if (!String::IsNullOrEmpty(this->label12->Text)) {
 						 valorC = Convert::ToDouble(this->label12->Text);
