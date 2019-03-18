@@ -1,4 +1,5 @@
 #pragma once
+// Versao: 1.0.0
 
 namespace TesteForm {
 
@@ -56,6 +57,7 @@ namespace TesteForm {
 		System::Windows::Forms::TextBox^  textBox9;
 		System::Windows::Forms::TextBox^  textBox10;
 
+
 		System::Windows::Forms::ComboBox^  comboBox1;
 		System::Windows::Forms::ComboBox^  comboBox2;
 		System::Windows::Forms::ComboBox^  comboBox3;
@@ -68,6 +70,7 @@ namespace TesteForm {
 		System::Windows::Forms::Label^  label6;
 		System::Windows::Forms::Label^  label7;
 		System::Windows::Forms::Label^  label8;
+		System::Windows::Forms::Label^  label9;
 		System::Windows::Forms::Label^  label10;
 		System::Windows::Forms::Label^  label11;
 		System::Windows::Forms::Label^  label12;
@@ -79,6 +82,7 @@ namespace TesteForm {
 		System::Windows::Forms::Label^  label18;
 		System::Windows::Forms::Label^  label19;
 		System::Windows::Forms::Label^  label20;
+		System::Windows::Forms::Label^  label21;
 		System::Windows::Forms::Label^  label22;
 		System::Windows::Forms::Label^  label23;
 		System::Windows::Forms::Label^  label24;
@@ -97,7 +101,10 @@ namespace TesteForm {
 		System::Windows::Forms::Label^  label37;
 		System::Windows::Forms::Label^  label38;
 		System::Windows::Forms::Label^  label39;
-		System::Windows::Forms::Label^  label40;	   
+		System::Windows::Forms::Label^  label40;
+
+		System::Windows::Forms::Label^  label42;
+
 		System::Windows::Forms::Label^  label44;
 		System::Windows::Forms::Label^  label45;
 		System::Windows::Forms::Label^  label46;
@@ -120,6 +127,7 @@ namespace TesteForm {
 		System::Windows::Forms::Panel^  panel2;
 		System::Windows::Forms::Panel^  panel3;
 		System::Windows::Forms::Panel^  panel4;
+		System::Windows::Forms::Panel^  panel5;
 
 		System::Windows::Forms::ErrorProvider^  errorProviderBox1;
 		System::Windows::Forms::ErrorProvider^  errorProviderBox2;
@@ -131,12 +139,13 @@ namespace TesteForm {
 		System::Windows::Forms::ErrorProvider^  errorProviderBox8;
 		System::Windows::Forms::ErrorProvider^  errorProviderBox9;
 		System::Windows::Forms::ErrorProvider^  errorProviderBox10;
+		System::Windows::Forms::ErrorProvider^  errorProviderBox11;
 
 		System::ComponentModel::IContainer^  components;
 
-		 /// <summary>
-		 /// Variável de designer necessária.
-		 /// </summary>
+		/// <summary>
+		/// Variável de designer necessária.
+		/// </summary>
 
 		int erroBox1 = 0;
 		int erroBox2 = 0;
@@ -148,19 +157,18 @@ namespace TesteForm {
 		int erroBox8 = 0;
 		int erroBox9 = 0;
 		int erroBox10 = 0;
+		int erroBox11 = 0;
 
 		String ^ CAMPO_NAO_ZERO = L"valor não pode ser zero";
 		String ^ ERRO_GERAL = L"Erro! Verifique os campos!";
-		String ^ CAMPO_OBRIGATORIO = L"* campo obrigatório";
+		String ^ CAMPO_OBRIGATORIO = L"campo obrigatório";
 		String ^ FORMATO_MOEDA = L"Formato Ex.: 1.000,00";
 		String ^ CAMPO_NUMERICO = L"Campo deve ser numérico";
 		String ^ POSITIVO = L"valor deve ser positivo";
-		String ^ VAZIO = L"";	
-		String ^ VENDA_MAIORQ_COMPRA = L"Qtd vendida > Qtd comprada";
-private: System::Windows::Forms::Panel^  panel5;
+		String ^ VAZIO = L"";
+		String ^ VENDA_MAIORQ_COMPRA = L"Qtd vendida > Qtd comprada atualizada";
+		String ^ numero_real = "^-?[0-9]+([.][0-9]{3,3})*(,[0-9]+)?$";
 
-
-		String ^ numero_real = "^\-{0,1}[0-9]+(\.[0-9]{3,3})*(,[0-9]+)*$";
 
 #pragma region Windows Form Designer generated code
 
@@ -169,7 +177,7 @@ private: System::Windows::Forms::Panel^  panel5;
 		/// o conteúdo deste método com o editor de código.
 		/// </summary>
 		void InitializeComponent(void)
-			 {
+		{
 			this->components = (gcnew System::ComponentModel::Container());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -193,6 +201,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
@@ -204,6 +213,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
@@ -247,6 +257,8 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label42 = (gcnew System::Windows::Forms::Label());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->errorProviderBox1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox2 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox7 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
@@ -257,11 +269,12 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->errorProviderBox8 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox9 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->errorProviderBox10 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->errorProviderBox11 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel4->SuspendLayout();
+			this->panel5->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox7))->BeginInit();
@@ -272,14 +285,14 @@ private: System::Windows::Forms::Panel^  panel5;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox10))->BeginInit();
-			this->panel5->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox11))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(617, 909);
+			this->button1->Location = System::Drawing::Point(837, 870);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(109, 40);
 			this->button1->TabIndex = 1;
@@ -291,7 +304,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(733, 909);
+			this->button2->Location = System::Drawing::Point(953, 870);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(133, 39);
 			this->button2->TabIndex = 37;
@@ -366,9 +379,9 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->textBox4->BackColor = System::Drawing::SystemColors::Window;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(397, 60);
+			this->textBox4->Location = System::Drawing::Point(394, 60);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(117, 27);
+			this->textBox4->Size = System::Drawing::Size(120, 27);
 			this->textBox4->TabIndex = 9;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			this->textBox4->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::textBox4_Validating);
@@ -392,7 +405,7 @@ private: System::Windows::Forms::Panel^  panel5;
 				static_cast<System::Byte>(0)));
 			this->textBox6->Location = System::Drawing::Point(588, 60);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(111, 27);
+			this->textBox6->Size = System::Drawing::Size(124, 27);
 			this->textBox6->TabIndex = 34;
 			this->textBox6->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox6_TextChanged);
 			this->textBox6->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::textBox6_Validating);
@@ -442,9 +455,9 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->textBox10->Enabled = false;
 			this->textBox10->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox10->Location = System::Drawing::Point(588, 97);
+			this->textBox10->Location = System::Drawing::Point(613, 97);
 			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(111, 27);
+			this->textBox10->Size = System::Drawing::Size(124, 27);
 			this->textBox10->TabIndex = 90;
 			this->textBox10->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox10_TextChanged);
 			this->textBox10->Validating += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::textBox10_Validating);
@@ -535,11 +548,22 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::Red;
-			this->label8->Location = System::Drawing::Point(592, 4);
+			this->label8->Location = System::Drawing::Point(810, 8);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(49, 19);
 			this->label8->TabIndex = 64;
 			this->label8->Text = L"          ";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(836, 65);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(56, 38);
+			this->label9->TabIndex = 73;
+			this->label9->Text = L"em \r\nSatoshi";
 			// 
 			// label10
 			// 
@@ -571,7 +595,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label12->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(475, 115);
+			this->label12->Location = System::Drawing::Point(694, 115);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(0, 19);
 			this->label12->TabIndex = 21;
@@ -581,7 +605,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(366, 99);
+			this->label13->Location = System::Drawing::Point(556, 100);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(26, 19);
 			this->label13->TabIndex = 38;
@@ -592,7 +616,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(558, 99);
+			this->label14->Location = System::Drawing::Point(364, 100);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(20, 19);
 			this->label14->TabIndex = 39;
@@ -666,6 +690,17 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label20->TabIndex = 29;
 			this->label20->Text = L"- Será descontado na venda";
 			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->BackColor = System::Drawing::Color::MediumAquamarine;
+			this->label21->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label21->Location = System::Drawing::Point(898, 79);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(0, 19);
+			this->label21->TabIndex = 75;
+			// 
 			// label22
 			// 
 			this->label22->AutoSize = true;
@@ -704,7 +739,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label25->AutoSize = true;
 			this->label25->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label25->Location = System::Drawing::Point(398, 99);
+			this->label25->Location = System::Drawing::Point(592, 100);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(93, 19);
 			this->label25->TabIndex = 35;
@@ -715,7 +750,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(599, 99);
+			this->label26->Location = System::Drawing::Point(405, 100);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(93, 19);
 			this->label26->TabIndex = 36;
@@ -726,11 +761,11 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label27->AutoSize = true;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(388, 115);
+			this->label27->Location = System::Drawing::Point(628, 115);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(77, 19);
+			this->label27->Size = System::Drawing::Size(53, 19);
 			this->label27->TabIndex = 41;
-			this->label27->Text = L"em moeda";
+			this->label27->Text = L"moeda";
 			// 
 			// label28
 			// 
@@ -860,7 +895,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label39->AutoSize = true;
 			this->label39->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label39->Location = System::Drawing::Point(648, 115);
+			this->label39->Location = System::Drawing::Point(443, 115);
 			this->label39->Name = L"label39";
 			this->label39->Size = System::Drawing::Size(26, 19);
 			this->label39->TabIndex = 70;
@@ -872,7 +907,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label40->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label40->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label40->Location = System::Drawing::Point(684, 115);
+			this->label40->Location = System::Drawing::Point(479, 115);
 			this->label40->Name = L"label40";
 			this->label40->Size = System::Drawing::Size(0, 19);
 			this->label40->TabIndex = 71;
@@ -918,7 +953,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label50->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label50->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label50->Location = System::Drawing::Point(390, 174);
+			this->label50->Location = System::Drawing::Point(401, 174);
 			this->label50->Name = L"label50";
 			this->label50->Size = System::Drawing::Size(0, 19);
 			this->label50->TabIndex = 76;
@@ -929,7 +964,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label51->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label51->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label51->Location = System::Drawing::Point(349, 174);
+			this->label51->Location = System::Drawing::Point(360, 174);
 			this->label51->Name = L"label51";
 			this->label51->Size = System::Drawing::Size(26, 19);
 			this->label51->TabIndex = 77;
@@ -951,7 +986,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label55->AutoSize = true;
 			this->label55->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label55->Location = System::Drawing::Point(362, 100);
+			this->label55->Location = System::Drawing::Point(360, 100);
 			this->label55->Name = L"label55";
 			this->label55->Size = System::Drawing::Size(26, 19);
 			this->label55->TabIndex = 83;
@@ -962,18 +997,18 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label56->AutoSize = true;
 			this->label56->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label56->Location = System::Drawing::Point(16, 214);
+			this->label56->Location = System::Drawing::Point(550, 55);
 			this->label56->Name = L"label56";
-			this->label56->Size = System::Drawing::Size(264, 19);
+			this->label56->Size = System::Drawing::Size(83, 19);
 			this->label56->TabIndex = 86;
-			this->label56->Text = L"- Valorização/Desvalorização da moeda";
+			this->label56->Text = L"Valorização";
 			// 
 			// label57
 			// 
 			this->label57->AutoSize = true;
 			this->label57->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label57->Location = System::Drawing::Point(348, 214);
+			this->label57->Location = System::Drawing::Point(632, 55);
 			this->label57->Name = L"label57";
 			this->label57->Size = System::Drawing::Size(20, 19);
 			this->label57->TabIndex = 87;
@@ -984,7 +1019,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label58->AutoSize = true;
 			this->label58->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label58->Location = System::Drawing::Point(386, 214);
+			this->label58->Location = System::Drawing::Point(670, 55);
 			this->label58->Name = L"label58";
 			this->label58->Size = System::Drawing::Size(101, 19);
 			this->label58->TabIndex = 88;
@@ -995,7 +1030,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label59->AutoSize = true;
 			this->label59->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label59->Location = System::Drawing::Point(525, 88);
+			this->label59->Location = System::Drawing::Point(550, 88);
 			this->label59->Name = L"label59";
 			this->label59->Size = System::Drawing::Size(53, 38);
 			this->label59->TabIndex = 91;
@@ -1007,7 +1042,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label60->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label60->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label60->Location = System::Drawing::Point(396, 136);
+			this->label60->Location = System::Drawing::Point(613, 136);
 			this->label60->Name = L"label60";
 			this->label60->Size = System::Drawing::Size(0, 19);
 			this->label60->TabIndex = 92;
@@ -1017,18 +1052,18 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label61->AutoSize = true;
 			this->label61->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label61->Location = System::Drawing::Point(309, 136);
+			this->label61->Location = System::Drawing::Point(550, 136);
 			this->label61->Name = L"label61";
-			this->label61->Size = System::Drawing::Size(77, 19);
+			this->label61->Size = System::Drawing::Size(53, 19);
 			this->label61->TabIndex = 93;
-			this->label61->Text = L"em moeda";
+			this->label61->Text = L"moeda";
 			// 
 			// label62
 			// 
 			this->label62->AutoSize = true;
 			this->label62->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label62->Location = System::Drawing::Point(548, 136);
+			this->label62->Location = System::Drawing::Point(361, 136);
 			this->label62->Name = L"label62";
 			this->label62->Size = System::Drawing::Size(26, 19);
 			this->label62->TabIndex = 94;
@@ -1040,7 +1075,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label63->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->label63->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label63->Location = System::Drawing::Point(595, 136);
+			this->label63->Location = System::Drawing::Point(408, 136);
 			this->label63->Name = L"label63";
 			this->label63->Size = System::Drawing::Size(0, 19);
 			this->label63->TabIndex = 95;
@@ -1051,7 +1086,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label65->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label65->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label65->Location = System::Drawing::Point(530, 174);
+			this->label65->Location = System::Drawing::Point(550, 174);
 			this->label65->Name = L"label65";
 			this->label65->Size = System::Drawing::Size(43, 19);
 			this->label65->TabIndex = 97;
@@ -1064,7 +1099,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->label66->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label66->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label66->Location = System::Drawing::Point(595, 174);
+			this->label66->Location = System::Drawing::Point(620, 174);
 			this->label66->Name = L"label66";
 			this->label66->Size = System::Drawing::Size(0, 19);
 			this->label66->TabIndex = 98;
@@ -1075,9 +1110,9 @@ private: System::Windows::Forms::Panel^  panel5;
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"porcentagem (%)", L"Reais (R$)" });
-			this->comboBox1->Location = System::Drawing::Point(195, 60);
+			this->comboBox1->Location = System::Drawing::Point(181, 60);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(152, 27);
+			this->comboBox1->Size = System::Drawing::Size(166, 27);
 			this->comboBox1->TabIndex = 65;
 			this->comboBox1->Text = L"em porcentagem (%)";
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox1_SelectedIndexChanged);
@@ -1097,14 +1132,15 @@ private: System::Windows::Forms::Panel^  panel5;
 			// 
 			// comboBox3
 			// 
-			this->comboBox3->BackColor = System::Drawing::Color::MediumAquamarine;
+			this->comboBox3->BackColor = System::Drawing::SystemColors::Window;
+			this->comboBox3->Enabled = false;
 			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox3->FormattingEnabled = true;
 			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"em Reais (R$)", L"em moeda" });
-			this->comboBox3->Location = System::Drawing::Point(195, 97);
+			this->comboBox3->Location = System::Drawing::Point(181, 97);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(152, 27);
+			this->comboBox3->Size = System::Drawing::Size(166, 27);
 			this->comboBox3->TabIndex = 89;
 			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox3_SelectedIndexChanged);
 			// 
@@ -1120,7 +1156,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel1->Controls->Add(this->textBox5);
 			this->panel1->Location = System::Drawing::Point(21, 310);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(844, 57);
+			this->panel1->Size = System::Drawing::Size(1064, 57);
 			this->panel1->TabIndex = 99;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel1_Paint);
 			// 
@@ -1152,7 +1188,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel2->Controls->Add(this->label44);
 			this->panel2->Location = System::Drawing::Point(21, 373);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(844, 253);
+			this->panel2->Size = System::Drawing::Size(1064, 214);
 			this->panel2->TabIndex = 100;
 			// 
 			// panel3
@@ -1179,15 +1215,18 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel3->Controls->Add(this->label10);
 			this->panel3->Controls->Add(this->label6);
 			this->panel3->Controls->Add(this->label7);
-			this->panel3->Location = System::Drawing::Point(21, 632);
+			this->panel3->Location = System::Drawing::Point(21, 593);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(844, 234);
+			this->panel3->Size = System::Drawing::Size(1064, 234);
 			this->panel3->TabIndex = 101;
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::MediumAquamarine;
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel4->Controls->Add(this->label42);
+			this->panel4->Controls->Add(this->label21);
+			this->panel4->Controls->Add(this->label9);
 			this->panel4->Controls->Add(this->label1);
 			this->panel4->Controls->Add(this->comboBox2);
 			this->panel4->Controls->Add(this->label40);
@@ -1209,8 +1248,29 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel4->Controls->Add(this->label16);
 			this->panel4->Location = System::Drawing::Point(21, 57);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(844, 194);
+			this->panel4->Size = System::Drawing::Size(1064, 194);
 			this->panel4->TabIndex = 102;
+			// 
+			// label42
+			// 
+			this->label42->AutoSize = true;
+			this->label42->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label42->Location = System::Drawing::Point(471, 17);
+			this->label42->Name = L"label42";
+			this->label42->Size = System::Drawing::Size(164, 19);
+			this->label42->TabIndex = 77;
+			this->label42->Text = L"100.000.000 em Satoshi";
+			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::MediumAquamarine;
+			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel5->Controls->Add(this->label8);
+			this->panel5->Location = System::Drawing::Point(21, 833);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(1064, 31);
+			this->panel5->TabIndex = 103;
 			// 
 			// errorProviderBox1
 			// 
@@ -1252,15 +1312,9 @@ private: System::Windows::Forms::Panel^  panel5;
 			// 
 			this->errorProviderBox10->ContainerControl = this;
 			// 
-			// panel5
+			// errorProviderBox11
 			// 
-			this->panel5->BackColor = System::Drawing::Color::MediumAquamarine;
-			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->panel5->Controls->Add(this->label8);
-			this->panel5->Location = System::Drawing::Point(21, 872);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(844, 31);
-			this->panel5->TabIndex = 103;
+			this->errorProviderBox11->ContainerControl = this;
 			// 
 			// MyForm
 			// 
@@ -1270,7 +1324,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->AutoScrollMargin = System::Drawing::Size(2, 10);
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->ClientSize = System::Drawing::Size(903, 867);
+			this->ClientSize = System::Drawing::Size(1126, 919);
 			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
@@ -1292,6 +1346,8 @@ private: System::Windows::Forms::Panel^  panel5;
 			this->panel3->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox7))->EndInit();
@@ -1302,8 +1358,7 @@ private: System::Windows::Forms::Panel^  panel5;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox10))->EndInit();
-			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProviderBox11))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1311,1232 +1366,1159 @@ private: System::Windows::Forms::Panel^  panel5;
 
 #pragma endregion
 
-	System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		 if (radioButton2->Checked == true) {
-			 calculaRadioButton2();
-		 }
-		 else {
-			 calculaRadioButton1();
-		 }
-	}
-
-	System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-
-		 this->textBox1->Text = L"";
-		 this->textBox2->Text = L"";
-		 this->textBox3->Text = L"";
-		 this->textBox4->Text = L"";
-		 this->textBox5->Text = L"";
-		 this->textBox6->Text = L"";
-		 this->textBox7->Text = L"";
-		 this->textBox8->Text = L"";
-		 this->textBox9->Text = L"";
-		 this->textBox10->Text = L"";
-
-		 //limpa variaveis globais
-		 if (radioButton2->Checked == true) {
-			 erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
-		 }
-		 else {
-			 if (comboBox3->SelectedIndex == 1) {
-				 erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
-			 }
-			 else {
-				 erroBox1 = imprimeErros(1, "");
-			 }
-		 }
-		 limpaResultParciais(1);
-
-		 if (comboBox2->SelectedIndex != 1) {
-			 erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
-			 erroBox7 = imprimeErros(7, "");
-		 }
-		 else {
-			 erroBox2 = imprimeErros(2, "");
-			 erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
-		 }
-		 limpaResultParciais(2);
-		 limpaResultParciais(7);
-
-		 erroBox3 = imprimeErros(3, "");
-		 limpaResultParciais(3);
-
-		 erroBox4 = imprimeErros(4, "");
-		 limpaResultParciais(4);
-
-		 erroBox5 = imprimeErros(5, "");
-		 limpaResultParciais(5);
-
-		 erroBox6 = imprimeErros(6, "");
-		 limpaResultParciais(6);
-
-		 if (radioButton1->Checked == true) {
-			 erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
-			 if (comboBox3->SelectedIndex == 1) {
-				 erroBox9 = imprimeErros(9, "");
-				 erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
-			 }
-			 else {
-				 erroBox10 = imprimeErros(10, "");
-				 erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
-			 }
-		 }
-		 limpaResultParciais(8);
-		 limpaResultParciais(9);
-		 limpaResultParciais(10);
-
-		 limpaResultFinais();
-		 limpaResultFinais2();
-	}
-
-	System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		 limpaResultFinais();
-		 habilitaRB1();
-	}
-
-	System::Void radioButton2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		 limpaResultFinais2();
-		 habilitaRB2();
-	}
-
-	System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double moedaR = 0;
-		 double montanteR = 0;
-		 double qtd_moeda = 0;
-		 double qtd_reais = 0;
-		 double taxaC = 0;
-		 double lucro = 0;
-		 double lucroR = 0;
-		 double valor = 0;
-
-		 erroBox1 = inicializaErros_Resultados(1);
-		 limpaResultFinais();
-		 limpaResultFinais2();
-
-		 if (!String::IsNullOrEmpty(this->textBox1->Text)) { // checa se vazio
-			 if (Regex::IsMatch(this->textBox1->Text, numero_real)) { //checa se numero real
-				 if(Convert::ToDouble(this->textBox1->Text) > 0){
-					moedaR = Convert::ToDouble(this->textBox1->Text);
-					montanteR = checaTextBox(2, 12, moedaR, "{0,12:N5}");
-					qtd_moeda = checaTextBox(7, 40, moedaR, "{0,12:N2}");
-					qtd_reais = qtd_moeda * moedaR;
-					taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
-					lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
-					lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
-				 }
-			 }
-		 }
-	}
-
-	System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double moedaR = 0;
-		 double montanteR = 0;
-		 double lucro = 0;
-		 double lucroR = 0;
-		 double taxaC = 0;
-
-		 erroBox2 = inicializaErros_Resultados(2);
-
-		 if (!String::IsNullOrEmpty(this->textBox2->Text)) { // checa se vazio
-			 if (Regex::IsMatch(this->textBox2->Text, numero_real)) { //checa se numero real
-				 if(Convert::ToDouble(this->textBox2->Text) > 0){
-					montanteR = Convert::ToDouble(this->textBox2->Text);
-					lucroR = checaTextBox(6, 26, montanteR, "{0,12:N5}");
-					moedaR = checaTextBox(1, 12, montanteR, "{0,12:N5}");
-					taxaC = checaTextBox(3, 17, montanteR, "{0,12:N2}");
-					lucro = checaTextBox(4, 25, montanteR, "{0,12:N2}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double taxaC = 0;
-		 double montanteR = 0;
-		 double qtd_reais = 0;
-
-		 erroBox3 = inicializaErros_Resultados(3);
-
-		 if (!String::IsNullOrEmpty(this->textBox3->Text)) {
-			 if (Regex::IsMatch(this->textBox3->Text, numero_real)) {
-				 if (Convert::ToDouble(this->textBox3->Text)> 0) {
-					 taxaC = Convert::ToDouble(this->textBox3->Text);
-					 montanteR = checaTextBox(2, 17, taxaC, "{0,12:N2}");
-					 qtd_reais = checaTextBox(7, 17, taxaC, "{0,12:N2}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox4_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double lucro = 0;
-		 double montanteR = 0;
-		 double qtd_reais = 0;
-
-		 erroBox4 = inicializaErros_Resultados(4);
-
-		 if (!String::IsNullOrEmpty(this->textBox4->Text)) {
-			 if (Regex::IsMatch(this->textBox4->Text, numero_real)) {
-				 if (Convert::ToDouble(this->textBox4->Text) > 0) {
-					 lucro = Convert::ToDouble(this->textBox4->Text);
-					 montanteR = checaTextBox(2, 25, lucro, "{0,12:N2}");
-					 qtd_reais = checaTextBox(7, 25, lucro, "{0,12:N2}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox5_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
-		 erroBox5 = inicializaErros_Resultados(5);
-		 limpaResultParciais(5);
-		 /*
-		 if (!String::IsNullOrEmpty(this->textBox5->Text)) {
-			 if (Regex::IsMatch(this->textBox5->Text, numero_real)) {
-				 if (Convert::ToDouble(this->textBox5->Text) > 0) {
-					 limpaResultParciais(5);
-				 }
-			 }
-		 }
-		 */
-	}
-	
-	System::Void textBox6_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double lucroR = 0;
-		 double montanteR = 0;
-		 double qtd_reais = 0;
-
-		 erroBox6 = inicializaErros_Resultados(6);
-
-		 if (!String::IsNullOrEmpty(this->textBox6->Text)) {
-			 if (Regex::IsMatch(this->textBox6->Text, numero_real)) {
-				 if (Convert::ToDouble(this->textBox6->Text) > 0) {
-					 lucroR = Convert::ToDouble(this->textBox6->Text);
-					 montanteR = checaTextBox(2, 26, lucroR, "{0,12:N5}");
-					 qtd_reais = checaTextBox(7, 26, lucroR, "{0,12:N5}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox7_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double qtd_moeda = 0;
-		 double qtd_reais = 0;
-		 double moedaR = 0;
-		 double taxaC = 0;
-		 double lucro = 0;
-		 double lucroR = 0;
-
-		 erroBox7 = inicializaErros_Resultados(7);
-
-		 if (!String::IsNullOrEmpty(this->textBox7->Text)) {
-			 if (Regex::IsMatch(this->textBox7->Text, numero_real)) {
-				 if(Convert::ToDouble(this->textBox7->Text) > 0){
-					qtd_moeda = Convert::ToDouble(this->textBox7->Text);
-					moedaR = checaTextBox(1, 40, qtd_moeda, "{0,12:N2}");
-					qtd_reais = moedaR * qtd_moeda;
-					taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
-					lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
-					lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox8_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double moedaV = 0;
-		 double qtd_moedaV = 0;
-		 double qtd_reaisV = 0;
-
-		 erroBox8 = inicializaErros_Resultados(8);
-
-		 if (!String::IsNullOrEmpty(this->textBox8->Text)) {
-			 if (Regex::IsMatch(this->textBox8->Text, numero_real)) {
-				 if (Convert::ToDouble(this->textBox8->Text) > 0) {
-					 moedaV = Convert::ToDouble(this->textBox8->Text);
-					 qtd_moedaV = checaTextBox(9, 60, moedaV, "{0,12:N5}");
-					 qtd_reaisV = checaTextBox(10, 63, moedaV, "{0,12:N2}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox9_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double montanteV = 0;
-		 double qtd_moedaV = 0;
-
-		 erroBox9 = inicializaErros_Resultados(9);
-
-		 if (!String::IsNullOrEmpty(this->textBox9->Text)) {
-			 if (Regex::IsMatch(this->textBox9->Text, numero_real)) {
-				 if(Convert::ToDouble(this->textBox9->Text) > 0){
-					montanteV = Convert::ToDouble(this->textBox9->Text);
-					qtd_moedaV = checaTextBox(8, 60, montanteV, "{0,12:N5}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox10_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 double montanteVM = 0;
-		 double qtd_reaisV = 0;
-
-		 erroBox10 = inicializaErros_Resultados(10);
-
-		 if (!String::IsNullOrEmpty(this->textBox10->Text)) {
-			 if (Regex::IsMatch(this->textBox10->Text, numero_real)) {
-				 if(Convert::ToDouble(this->textBox10->Text) > 0){
-					 montanteVM = Convert::ToDouble(this->textBox10->Text);
-					 qtd_reaisV = checaTextBox(8, 63, montanteVM, "{0,12:N2}");
-				 }
-			 }
-		 }
-	}
-	
-	System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-
-		 if (radioButton2->Checked == true) {
-
-			 limpaResultFinais();
-
-			 if (comboBox1->SelectedIndex == 0) {
-				 //limpa textBox6 e seus resultados parciais
-				 habiDesabTextBox(0, 6);
-				//habilita textBox4
-				 habiDesabTextBox(1, 4);
-			 }
-			 if (comboBox1->SelectedIndex == 1) {
-				 //limpa textBox4 e seus resultados parciais
-				 habiDesabTextBox(0, 4);
-				 //habilita textBox6
-				 habiDesabTextBox(1, 6);
-			 }
-		 }
-	}
-	
-	System::Void comboBox2_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		 if (comboBox2->SelectedIndex == 1) {
-			 //limpa textBox2 e seus resultados parciais
-			 //label12->Text = L"";
-			 habiDesabTextBox(0, 2);
-			 //habilita textBox7
-			 habiDesabTextBox(1, 7);
-		 }
-		 else {
-			 comboBox2->SelectedIndex = 0;
-			 //limpa textBox7 e seus resultados parciais
-			 //label40->Text = L"";
-			 habiDesabTextBox(0, 7);
-			 //habilita textBox2
-			 habiDesabTextBox(1, 2);
-		 }
-	}
-	
-	System::Void comboBox3_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		 if (radioButton1->Checked == true) {
-			 if (String::IsNullOrEmpty(this->textBox8->Text)) {
-				 erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
-			 }
-
-			 if (comboBox3->SelectedIndex == 1) {
-				 //limpa textBox9 e seus resultados parciais
-				 habiDesabTextBox(0, 9);
-				 //habilita textBox10
-				 habiDesabTextBox(1, 10);
-			 }
-			 else {
-				 comboBox3->SelectedIndex = 0;
-				 //limpa textBox10 e seus resultados parciais
-				 habiDesabTextBox(0, 10);
-				 //habilita textBox9
-				 habiDesabTextBox(1, 9);
-			 }
-		 }
-	}
-	
-	System::Void habiDesabTextBox(int hd, int box_number) {
-		switch (box_number) {
-		case 2:
-			if (hd == 0) { // desabilita textBox2
-				textBox2->Enabled = false;
-				textBox2->BackColor = System::Drawing::Color::MediumAquamarine;
-				textBox2->Text = "";
-				erroBox2 = imprimeErros(2, "");
-				limpaResultParciais(2);
+			if (radioButton2->Checked == true) {
+				calculaRadioButton2();
 			}
-			else { //habilita
-				textBox2->Enabled = true;
-				textBox2->BackColor = System::Drawing::SystemColors::Window;
-				if (String::IsNullOrEmpty(this->textBox2->Text)) {
+			else {
+				calculaRadioButton1();
+			}
+		}
+
+		System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			LimpaTudo();
+		}
+
+		System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			limpaResultFinais();
+			habilitaRB1();
+		}
+
+		System::Void radioButton2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			limpaResultFinais2();
+			habilitaRB2();
+		}
+
+		System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double moedaR = 0;
+			double montanteR = 0;
+			double qtd_moeda = 0;
+			double qtd_reais = 0;
+			double taxaC = 0;
+			double lucro = 0;
+			double lucroR = 0;
+			double valor = 0;
+			double qtd_satoshi = 0;
+
+			erroBox1 = inicializaErros_Resultados(1);
+			Box1_Validating();
+			if (erroBox1 == 0) {
+				moedaR = Convert::ToDouble(this->textBox1->Text);
+				montanteR = checaTextBox(2, 12, moedaR, "{0,12:N8}");
+				qtd_satoshi = checaTextBox(2, 21, moedaR, "{0,12:N8}");
+				qtd_moeda = checaTextBox(7, 40, moedaR, "{0,12:N2}");
+				qtd_satoshi = checaTextBox(7, 21, moedaR, "{0,12:N8}");
+				qtd_reais = qtd_moeda * moedaR;
+				taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
+				lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
+				lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
+			}
+		}
+
+		System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double moedaR = 0;
+			double montanteR = 0;
+			double lucro = 0;
+			double lucroR = 0;
+			double taxaC = 0;
+
+			erroBox2 = inicializaErros_Resultados(2);
+			Box2_Validating();
+			if (erroBox2 == 0) {
+				montanteR = Convert::ToDouble(this->textBox2->Text);
+				lucroR = checaTextBox(6, 26, montanteR, "{0,12:N5}");
+				moedaR = checaTextBox(1, 12, montanteR, "{0,12:N8}");
+				taxaC = checaTextBox(3, 17, montanteR, "{0,12:N2}");
+				lucro = checaTextBox(4, 25, montanteR, "{0,12:N2}");
+			}
+		}
+
+		System::Void textBox3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double taxaC = 0;
+			double montanteR = 0;
+			double qtd_reais = 0;
+
+			erroBox3 = inicializaErros_Resultados(3);
+			Box3_Validating();
+			if (erroBox3 == 0) {
+				taxaC = Convert::ToDouble(this->textBox3->Text);
+				montanteR = checaTextBox(2, 17, taxaC, "{0,12:N2}");
+				qtd_reais = checaTextBox(7, 17, taxaC, "{0,12:N2}");
+			}
+		}
+
+		System::Void textBox4_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double lucro = 0;
+			double montanteR = 0;
+			double qtd_reais = 0;
+
+			erroBox4 = inicializaErros_Resultados(4);
+			Box4_Validating();
+			if (erroBox4 == 0) {
+				lucro = Convert::ToDouble(this->textBox4->Text);
+				montanteR = checaTextBox(2, 25, lucro, "{0,12:N2}");
+				qtd_reais = checaTextBox(7, 25, lucro, "{0,12:N2}");
+			}
+		}
+
+		System::Void textBox5_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+
+			erroBox5 = inicializaErros_Resultados(5);
+			Box5_Validating();
+
+		}
+
+		System::Void textBox6_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double lucroR = 0;
+			double montanteR = 0;
+			double qtd_reais = 0;
+
+			erroBox6 = inicializaErros_Resultados(6);
+			Box6_Validating();
+			if (erroBox6 == 0) {
+				lucroR = Convert::ToDouble(this->textBox6->Text);
+				montanteR = checaTextBox(2, 26, lucroR, "{0,12:N5}");
+				qtd_reais = checaTextBox(7, 26, lucroR, "{0,12:N5}");
+			}
+		}
+
+		System::Void textBox7_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double qtd_moeda = 0;
+			double qtd_reais = 0;
+			double moedaR = 0;
+			double taxaC = 0;
+			double lucro = 0;
+			double lucroR = 0;
+
+			erroBox7 = inicializaErros_Resultados(7);
+			Box7_Validating();
+			if (erroBox7 == 0) {
+				qtd_moeda = Convert::ToDouble(this->textBox7->Text);
+				moedaR = checaTextBox(1, 40, qtd_moeda, "{0,12:N2}");
+				qtd_reais = moedaR * qtd_moeda;
+				taxaC = checaTextBox(3, 17, qtd_reais, "{0,12:N2}");
+				lucro = checaTextBox(4, 25, qtd_reais, "{0,12:N2}");
+				lucroR = checaTextBox(6, 26, qtd_reais, "{0,12:N5}");
+			}
+		}
+
+		System::Void textBox8_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double moedaV = 0;
+			double qtd_moedaV = 0;
+			double qtd_reaisV = 0;
+			double valorizacao = 0;
+			double montanteAtual = 0;
+
+			erroBox8 = inicializaErros_Resultados(8);
+			Box8_Validating();
+			if (erroBox8 == 0) {
+				moedaV = Convert::ToDouble(this->textBox8->Text);
+				qtd_moedaV = checaTextBox(9, 60, moedaV, "{0,12:N8}");
+				qtd_reaisV = checaTextBox(10, 63, moedaV, "{0,12:N2}");
+				valorizacao = checaTextBox(1, 58, moedaV, "{0,12:N5}");
+				montanteAtual = checaTextBox(2, 41, valorizacao, "{0,12:N2}");
+			}
+		}
+
+		System::Void textBox9_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double montanteV = 0;
+			double qtd_moedaV = 0;
+
+			erroBox9 = inicializaErros_Resultados(9);
+			Box9_Validating();
+			if (erroBox9 == 0) {
+				montanteV = Convert::ToDouble(this->textBox9->Text);
+				qtd_moedaV = checaTextBox(8, 60, montanteV, "{0,12:N8}");
+			}
+		}
+
+		System::Void textBox10_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			double montanteVM = 0;
+			double qtd_reaisV = 0;
+
+			erroBox10 = inicializaErros_Resultados(10);
+			Box10_Validating();
+			if (erroBox10 == 0) {
+				montanteVM = Convert::ToDouble(this->textBox10->Text);
+				qtd_reaisV = checaTextBox(8, 63, montanteVM, "{0,12:N2}");
+			}
+		}
+
+		System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+
+			if (radioButton2->Checked == true) {
+
+				limpaResultFinais();
+
+				if (comboBox1->SelectedIndex == 0) {
+					habiDesabTextBox(0, 6);
+					habiDesabTextBox(1, 4);
+				}
+				if (comboBox1->SelectedIndex == 1) {
+					habiDesabTextBox(0, 4);
+					habiDesabTextBox(1, 6);
+				}
+			}
+		}
+
+		System::Void comboBox2_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			if (comboBox2->SelectedIndex == 1) {
+				habiDesabTextBox(0, 2);
+				habiDesabTextBox(1, 7);
+			}
+			else if (comboBox2->SelectedIndex == 0) {
+				comboBox2->SelectedIndex = 0;
+				habiDesabTextBox(0, 7);
+				habiDesabTextBox(1, 2);
+			}
+			else {
+				comboBox2->SelectedIndex = 2;
+				habiDesabTextBox(0, 7);
+				habiDesabTextBox(0, 2);
+			}
+		}
+
+		System::Void comboBox3_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			if (radioButton1->Checked == true) {
+				if (String::IsNullOrEmpty(this->textBox8->Text)) {
+					erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
+				}
+
+				if (comboBox3->SelectedIndex == 1) {
+					habiDesabTextBox(0, 9);
+					habiDesabTextBox(1, 10);
+				}
+				else {
+					comboBox3->SelectedIndex = 0;
+					habiDesabTextBox(0, 10);
+					habiDesabTextBox(1, 9);
+				}
+			}
+		}
+
+		System::Void habiDesabTextBox(int hd, int box_number) {
+			switch (box_number) {
+			case 2:
+				if (hd == 0) { // desabilita textBox2
+					textBox2->Enabled = false;
+					textBox2->BackColor = System::Drawing::Color::MediumAquamarine;
+					textBox2->Text = "";
+					erroBox2 = imprimeErros(2, "");
+					limpaResultParciais(2);
+				}
+				else { //habilita
+					textBox2->Enabled = true;
+					textBox2->BackColor = System::Drawing::SystemColors::Window;
+					if (String::IsNullOrEmpty(this->textBox2->Text)) {
+						erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
+					}
+				}
+				break;
+			case 4:
+				if (hd == 0) { // desabilita textBox4
+					textBox4->Enabled = false;
+					textBox4->BackColor = System::Drawing::Color::MediumAquamarine;
+					textBox4->Text = "";
+					erroBox4 = imprimeErros(4, "");
+					limpaResultParciais(4);
+				}
+				else { //habilita
+					textBox4->Enabled = true;
+					textBox4->BackColor = System::Drawing::SystemColors::Window;
+				}
+				break;
+			case 6:
+				if (hd == 0) { // desabilita textBox6
+					textBox6->Enabled = false;
+					textBox6->BackColor = System::Drawing::Color::MediumAquamarine;
+					textBox6->Text = "";
+					erroBox6 = imprimeErros(6, "");
+					limpaResultParciais(6);
+				}
+				else { //habilita
+					textBox6->Enabled = true;
+					textBox6->BackColor = System::Drawing::SystemColors::Window;
+				}
+				break;
+			case 7:
+				if (hd == 0) { // desabilita textBox7
+					textBox7->Enabled = false;
+					textBox7->BackColor = System::Drawing::Color::MediumAquamarine;
+					textBox7->Text = "";
+					erroBox7 = imprimeErros(7, "");
+					limpaResultParciais(7);
+				}
+				else { //habilita
+					textBox7->Enabled = true;
+					textBox7->BackColor = System::Drawing::SystemColors::Window;
+					if (String::IsNullOrEmpty(this->textBox7->Text)) {
+						erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
+					}
+				}
+				break;
+			case 8:
+				if (hd == 0) { // desabilita textBox8
+					textBox8->Text = L"";
+					textBox8->Enabled = false;
+					textBox8->BackColor = System::Drawing::Color::MediumAquamarine;
+					erroBox8 = imprimeErros(8, "");
+					limpaResultParciais(8);
+				}
+				else { //habilita
+					textBox8->Enabled = true;
+					textBox8->BackColor = System::Drawing::SystemColors::Window;
+					if (String::IsNullOrEmpty(this->textBox8->Text)) {
+						erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
+					}
+				}
+				break;
+			case 9:
+				if (hd == 0) { // desabilita textBox9
+					textBox9->Text = L"";
+					textBox9->Enabled = false;
+					textBox9->BackColor = System::Drawing::Color::MediumAquamarine;
+					erroBox9 = imprimeErros(9, "");
+					limpaResultParciais(9);
+				}
+				else { //habilita
+					textBox9->Enabled = true;
+					textBox9->BackColor = System::Drawing::SystemColors::Window;
+					if (String::IsNullOrEmpty(this->textBox9->Text)) {
+						erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
+					}
+				}
+				break;
+			case 10:
+				if (hd == 0) { // desabilita textBox10
+					textBox10->Text = L"";
+					textBox10->Enabled = false;
+					textBox10->BackColor = System::Drawing::Color::MediumAquamarine;
+					erroBox10 = imprimeErros(10, "");
+					limpaResultParciais(10);
+				}
+				else { //habilita
+					textBox10->Enabled = true;
+					textBox10->BackColor = System::Drawing::SystemColors::Window;
+					if (String::IsNullOrEmpty(this->textBox10->Text)) {
+						erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
+					}
+				}
+				break;
+			default:
+				break;
+			}
+			return;
+		}
+
+		System::Void limpaResultParciais(int box_number) {
+			switch (box_number) {
+			case 1:
+				label12->Text = L"";
+				label21->Text = L"";
+				label40->Text = L"";
+				label17->Text = L"";
+				label25->Text = L"";
+				label26->Text = L"";
+				break;
+			case 2:
+				label12->Text = L"";
+				label21->Text = L"";
+				label17->Text = L"";
+				label25->Text = L"";
+				label26->Text = L"";
+				break;
+			case 3:
+				label17->Text = L"";
+				break;
+			case 4:
+				label25->Text = L"";
+				break;
+			case 5:
+				break;
+			case 6:
+				label26->Text = L"";
+				break;
+			case 7:
+				label40->Text = L""; // limpa qtd a ser comprada, em reais
+				label21->Text = L"";
+				label17->Text = L"";
+				label25->Text = L"";
+				label26->Text = L"";
+				break;
+			case 8:
+				label60->Text = L"";
+				label58->Text = L"";
+				if (comboBox3->SelectedIndex == 1) {
+					label63->Text = L"";
+				}
+				break;
+			case 9:
+				label60->Text = L"";
+				break;
+			case 10:
+				label63->Text = L"";
+				break;
+			case 11:
+				label21->Text = L"";
+				label12->Text = L"";
+				label40->Text = L"";
+				label17->Text = L"";
+				label25->Text = L"";
+				label26->Text = L"";
+				break;
+			default:
+				break;
+			}
+			return;
+		}
+
+		System::Void limpaResultFinais() {
+			label22->Text = L"";
+			label10->Text = L"";
+			label11->Text = L"";
+			label38->Text = L"";
+
+			if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
+				(erroBox4 == 0) && (erroBox5 == 0) && (erroBox6 == 0) &&
+				(erroBox7 == 0)) {
+				label8->Text = L"";
+			}
+		}
+
+		System::Void limpaResultFinais2() {
+			label50->Text = L"";
+			label22->Text = L"";
+			label66->Text = L"";
+
+			if ((erroBox8 == 0) && (erroBox9 == 0) && (erroBox10 == 0)) {
+				label8->Text = L"";
+			}
+		}
+
+		double checaTextBox(int box_number, int label_number, double valor_entrada, String ^ formato) {
+			double valor_saida = 0;
+			double calculo = 0;
+			double aux1 = 0, aux2 = 0;
+			double satoshi = 0;
+			double retorno = 0;
+
+			switch (box_number) {
+			case 1:
+				if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
+					valor_saida = Convert::ToDouble(this->textBox1->Text); //moedaR
+					retorno = valor_saida;
+					if (label_number == 12) {
+						calculo = valor_entrada / valor_saida;
+						label12->Text = System::String::Format(formato, calculo);
+						label21->Text = System::String::Format("{0,12:N8}", calculo * 100000000);
+					}
+					if (label_number == 40) {
+						calculo = valor_saida * valor_entrada;
+						label40->Text = System::String::Format(formato, calculo);
+						label21->Text = System::String::Format("{0,12:N8}", valor_entrada * 100000000);
+					}
+					if (label_number == 21) {
+						calculo = valor_entrada / 100000000;
+						label12->Text = System::String::Format("{0,12:N8}", calculo);
+						calculo = valor_saida * (valor_entrada / 100000000);
+						label40->Text = System::String::Format("{0,12:N2}", calculo);
+					}
+					if ((label_number == 58) && (erroBox8 == 0)) {
+						calculo = ((valor_entrada - valor_saida) * 100) / valor_saida;
+						label58->Text = System::String::Format(formato, calculo);
+						retorno = calculo;
+					}
+				}
+				else {
+					limpaResultParciais(1);
+				}
+				break;
+			case 2:
+				if (this->comboBox2->SelectedIndex == 0) {
+					if (!String::IsNullOrEmpty(this->textBox2->Text) && (erroBox2 == 0)) {
+						valor_saida = Convert::ToDouble(this->textBox2->Text); //montanteR
+						retorno = valor_saida;
+						if (label_number == 12) {
+							calculo = valor_saida / valor_entrada;
+							label12->Text = System::String::Format(formato, calculo);
+						}
+						if (label_number == 17) {
+							calculo = (valor_entrada / 100)*valor_saida;
+							label17->Text = System::String::Format(formato, calculo);
+						}
+						if (label_number == 25) {
+							calculo = (valor_entrada / 100)*valor_saida;
+							label25->Text = System::String::Format(formato, calculo);
+						}
+						if (label_number == 26) {
+							calculo = (valor_entrada / valor_saida) * 100;
+							label26->Text = System::String::Format(formato, calculo);
+						}
+						if (label_number == 21) {
+							calculo = (valor_saida * 100000000) / valor_entrada;
+							label21->Text = System::String::Format(formato, calculo);
+						}
+					}
+					else {
+						limpaResultParciais(2);
+					}
+				}
+				break;
+			case 3:
+				if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
+					valor_saida = Convert::ToDouble(this->textBox3->Text); //taxaC
+					retorno = valor_saida;
+					calculo = (valor_saida / 100)*valor_entrada;
+					label17->Text = System::String::Format(formato, calculo);
+				}
+				else {
+					limpaResultParciais(3);
+				}
+				break;
+			case 4:
+				if (!String::IsNullOrEmpty(this->textBox4->Text) && (erroBox4 == 0)) {
+					valor_saida = Convert::ToDouble(this->textBox4->Text); //lucro
+					retorno = valor_saida;
+					calculo = (valor_saida / 100)*valor_entrada;
+					label25->Text = System::String::Format(formato, calculo);
+				}
+				else {
+					limpaResultParciais(4);
+				}
+				break;
+			case 6:
+				if (!String::IsNullOrEmpty(this->textBox6->Text) && (erroBox6 == 0)) {
+					valor_saida = Convert::ToDouble(this->textBox6->Text); // lucroR
+					retorno = valor_saida;
+					calculo = (valor_saida / valor_entrada) * 100;
+					label26->Text = System::String::Format(formato, calculo);
+				}
+				else {
+					limpaResultParciais(6);
+				}
+				break;
+			case 7:
+				if (this->comboBox2->SelectedIndex == 1) {
+					if (!String::IsNullOrEmpty(this->textBox7->Text) && (erroBox7 == 0)) {
+						if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
+							aux1 = Convert::ToDouble(this->textBox1->Text);
+							aux2 = Convert::ToDouble(this->textBox7->Text);
+							retorno = aux2;
+							if (label_number == 40) {
+								valor_saida = aux2; //qtd_moeda
+								calculo = valor_entrada * valor_saida;
+								label40->Text = System::String::Format(formato, calculo);
+							}
+							if (label_number == 25) {
+								valor_saida = aux1 * aux2; //// qtd_reais
+								calculo = (valor_entrada / 100)*valor_saida;
+								label25->Text = System::String::Format(formato, calculo);
+							}
+							if (label_number == 26) {
+								valor_saida = aux1 * aux2; //// qtd_reais
+								calculo = (valor_entrada / valor_saida) * 100;
+								label26->Text = System::String::Format(formato, calculo);
+							}
+							if (label_number == 17) {
+								valor_saida = aux1 * aux2; //// qtd_reais
+								calculo = (valor_entrada / 100)*valor_saida;
+								label17->Text = System::String::Format(formato, calculo);
+							}
+							if (label_number == 21) {
+								calculo = aux2 * 100000000;
+								label21->Text = System::String::Format(formato, calculo);
+							}
+						}
+						else {
+							limpaResultParciais(1);
+						}
+					}
+					else {
+						limpaResultParciais(7);
+					}
+				}
+				break;
+			case 8:
+				if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
+					valor_saida = Convert::ToDouble(this->textBox8->Text); //qtd_moedaV
+					retorno = valor_saida;
+					if (label_number == 0) {
+						calculo = (1 - (valor_entrada / valor_saida)) * 100;
+						retorno = calculo;
+					}
+					if (label_number == 60) {
+						calculo = valor_entrada / valor_saida;
+						label60->Text = System::String::Format(formato, calculo);
+					}
+					if (label_number == 63) {
+						calculo = valor_entrada * valor_saida;
+						label63->Text = System::String::Format(formato, calculo);
+					}
+				}
+				else {
+					limpaResultParciais(8);
+				}
+				break;
+			case 9:
+				if (this->comboBox3->SelectedIndex != 1) {
+					if (!String::IsNullOrEmpty(this->textBox9->Text) && (erroBox9 == 0)) {
+						if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
+							valor_saida = Convert::ToDouble(this->textBox9->Text); //qtd_moedaV
+							retorno = valor_saida;
+							if (label_number == 60) {
+								calculo = valor_saida / valor_entrada;
+								label60->Text = System::String::Format(formato, calculo);
+							}
+						}
+						else {
+							limpaResultParciais(8);
+						}
+					}
+					else {
+						limpaResultParciais(9);
+					}
+				}
+				break;
+			case 10:
+				if (this->comboBox3->SelectedIndex == 1) {
+					if (!String::IsNullOrEmpty(this->textBox10->Text) && (erroBox10 == 0)) {
+						if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
+							valor_saida = Convert::ToDouble(this->textBox10->Text); //qtd_moedaV							
+							retorno = valor_saida;
+							if (label_number == 63) {
+								calculo = valor_entrada * valor_saida;
+								label63->Text = System::String::Format(formato, calculo);
+							}
+						}
+						else {
+							limpaResultParciais(8);
+						}
+					}
+					else {
+						limpaResultParciais(10);
+					}
+				}
+				break;
+			default:
+				break;
+			}
+
+			return retorno;
+		}
+
+		int inicializaErros_Resultados(int box_number) {
+
+			switch (box_number) {
+			case 1:
+				errorProviderBox1->Clear();
+				limpaResultParciais(1);
+				limpaResultFinais2();
+				break;
+			case 2:
+				errorProviderBox2->Clear();
+				limpaResultParciais(2);
+				break;
+			case 3:
+				errorProviderBox3->Clear();
+				limpaResultParciais(3);
+				break;
+			case 4:
+				errorProviderBox4->Clear();
+				limpaResultParciais(4);
+				break;
+			case 5:
+				errorProviderBox5->Clear();
+				limpaResultParciais(5);
+				break;
+			case 6:
+				errorProviderBox6->Clear();
+				limpaResultParciais(6);
+				break;
+			case 7:
+				errorProviderBox7->Clear();
+				limpaResultParciais(7);
+				break;
+			case 8:
+				errorProviderBox8->Clear();
+				limpaResultParciais(8);
+				limpaResultFinais2();
+				break;
+			case 9:
+				errorProviderBox9->Clear();
+				limpaResultParciais(9);
+				limpaResultFinais2();
+				break;
+			case 10:
+				errorProviderBox10->Clear();
+				limpaResultParciais(10);
+				limpaResultFinais2();
+				break;
+			default:
+				break;
+			}
+
+			limpaResultFinais();
+			return 0;
+
+		}
+
+		int imprimeErros(int box_number, String ^ msg) {
+			switch (box_number) {
+			case 1:
+				if (msg->CompareTo("") == 0) { errorProviderBox1->Clear(); }
+				else { errorProviderBox1->SetError(textBox1, msg); }
+				break;
+			case 2:
+				if (msg->CompareTo("") == 0) { errorProviderBox2->Clear(); }
+				else { errorProviderBox2->SetError(textBox2, msg); }
+				break;
+			case 3:
+				if (msg->CompareTo("") == 0) { errorProviderBox3->Clear(); }
+				else { errorProviderBox3->SetError(textBox3, msg); }
+				break;
+			case 4:
+				if (msg->CompareTo("") == 0) { errorProviderBox4->Clear(); }
+				else { errorProviderBox4->SetError(textBox4, msg); }
+				break;
+			case 5:
+				if (msg->CompareTo("") == 0) { errorProviderBox5->Clear(); }
+				else { errorProviderBox5->SetError(textBox5, msg); }
+				break;
+			case 6:
+				if (msg->CompareTo("") == 0) { errorProviderBox6->Clear(); }
+				else { errorProviderBox6->SetError(textBox6, msg); }
+				break;
+			case 7:
+				if (msg->CompareTo("") == 0) { errorProviderBox7->Clear(); }
+				else { errorProviderBox7->SetError(textBox7, msg); }
+				break;
+			case 8:
+				if (msg->CompareTo("") == 0) { errorProviderBox8->Clear(); }
+				else { errorProviderBox8->SetError(textBox8, msg); }
+				break;
+			case 9:
+				if (msg->CompareTo("") == 0) { errorProviderBox9->Clear(); }
+				else { errorProviderBox9->SetError(textBox9, msg); }
+				break;
+			case 10:
+				if (msg->CompareTo("") == 0) { errorProviderBox10->Clear(); }
+				else { errorProviderBox10->SetError(textBox10, msg); }
+				break;
+			default:
+				break;
+			}
+			if (msg->CompareTo("") == 0) {
+				return 0;
+			}
+			else {
+				return 1;
+			}
+		}
+
+		System::Void calculaRadioButton1() {
+			double M = 0, TV = 0, TC = 0, MR = 0, MV = 0, DV = 0, DC = 0, LP = 0, QMV = 0;
+			double valorVenda = 0;
+			double Lucro = 0;
+
+			Box1_Validating();
+			Box2_Validating();
+			Box3_Validating();
+			Box5_Validating();
+			Box7_Validating();
+			Box8_Validating();
+			Box9_Validating();
+			Box10_Validating();
+
+			if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
+				MR = Convert::ToDouble(this->textBox1->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox2->Text) && (erroBox2 == 0)) {
+				M = Convert::ToDouble(this->textBox2->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox7->Text)) {
+				if ((erroBox7 == 0) && (erroBox1 == 0)) {
+					M = Convert::ToDouble(this->label40->Text);
+				}
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
+				TC = Convert::ToDouble(this->textBox3->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox5->Text) && (erroBox5 == 0)) {
+				TV = Convert::ToDouble(this->textBox5->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox8->Text)) {
+				if ((erroBox8 == 0) && (erroBox1 == 0)) {
+					MV = Convert::ToDouble(this->textBox8->Text);
+				}
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox9->Text)) {
+				if ((erroBox1 == 0) && (erroBox8 == 0) && (erroBox9 == 0)) {
+					valorVenda = Convert::ToDouble(this->textBox9->Text);
+					QMV = Convert::ToDouble(this->label60->Text);
+				}
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox10->Text)) {
+				if ((erroBox1 == 0) && (erroBox8 == 0) && (erroBox10 == 0)) {
+					valorVenda = Convert::ToDouble(this->label63->Text);
+					QMV = Convert::ToDouble(this->textBox10->Text);
+				}
+			}
+
+			if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
+				(erroBox5 == 0) && (erroBox7 == 0) && (erroBox8 == 0) &&
+				(erroBox9 == 0) && (erroBox10 == 0)) {
+				label8->Text = L"";
+				DV = (TV / 100)*valorVenda;
+				DC = (TC / 100) * M;
+				Lucro = ((MV - MR)*QMV) - DC - DV;
+				LP = ((100 * (((MV - MR)*QMV) - DC - DV)) / (QMV*MR));
+				if (TV != 0) {
+					label22->Text = System::String::Format("{0,12:N2}", DV);
+				}
+				label50->Text = System::String::Format("{0,12:N2}", Lucro);
+				label66->Text = System::String::Format("{0,12:N5}", LP);
+				if (Lucro < 0) {
+					this->label50->ForeColor = System::Drawing::Color::Red;
+					this->label66->ForeColor = System::Drawing::Color::Red;
+				}
+				else {
+					this->label50->ForeColor = System::Drawing::SystemColors::ControlText;
+					this->label66->ForeColor = System::Drawing::SystemColors::ControlText;
+				}
+			}
+			else {
+				label8->Text = ERRO_GERAL;
+			}
+		}
+
+		System::Void calculaRadioButton2() {
+			double L = 0, TC = 0, M = 0, TV = 0, MR = 0, LR = 0, LM = 0;
+			double valorVenda = 0;
+			double valorizacao = 0;
+
+			Box1_Validating();
+			Box2_Validating();
+			Box3_Validating();
+			Box4_Validating();
+			Box5_Validating();
+			Box6_Validating();
+			Box7_Validating();
+
+			if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
+				MR = Convert::ToDouble(this->textBox1->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox2->Text) && (erroBox2 == 0)) {
+				M = Convert::ToDouble(this->textBox2->Text);
+				valorVenda = M;
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox7->Text) && (erroBox7 == 0)) {
+				M = Convert::ToDouble(this->label40->Text);
+				valorVenda = M;
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
+				TC = Convert::ToDouble(this->textBox3->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox5->Text) && (erroBox5 == 0)) {
+				TV = Convert::ToDouble(this->textBox5->Text);
+			}
+
+			if (!String::IsNullOrEmpty(this->textBox4->Text) && (erroBox4 == 0)) {
+				L = Convert::ToDouble(this->textBox4->Text);
+				valorVenda = ((100 + L + TC) * M) / (100 - TV);
+			}
+			else {
+				if (!String::IsNullOrEmpty(this->textBox6->Text) && (erroBox6 == 0)) {
+					LR = Convert::ToDouble(this->textBox6->Text);
+					LM = (LR / M) * 100;
+					valorVenda = ((100 + LM + TC)*M) / (100 - TV);
+				}
+			}
+
+			if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
+				(erroBox4 == 0) && (erroBox5 == 0) && (erroBox6 == 0) &&
+				(erroBox7 == 0)) {
+				label8->Text = L"";
+				label10->Text = System::String::Format("{0,12:N2}", valorVenda);
+				if (TV != 0) {
+					label22->Text = System::String::Format("{0,12:N2}", (TV / 100)*valorVenda);
+				}
+				label11->Text = System::String::Format("{0,12:N2}", valorVenda / (M / MR));
+				valorizacao = ((((valorVenda / (M / MR)) - MR) * 100) / MR);
+				label38->Text = System::String::Format("{0,12:N5}", valorizacao);
+			}
+			else {
+				label8->Text = ERRO_GERAL;
+			}
+		}
+
+		System::Void habilitaRB1() {
+
+			//habilitaRB1
+			if (radioButton1->Checked == true) {
+				radioButton2->Checked = false;
+
+				//limpa comboBox1
+				comboBox1->Text = "";
+				comboBox1->BackColor = System::Drawing::Color::MediumAquamarine;
+				comboBox1->Enabled = false;
+
+				//limpa textBox4 e seus resultados parciais
+				habiDesabTextBox(0, 4);
+				//limpa textBox6 e seus resultados parciais
+				habiDesabTextBox(0, 6);
+
+				//habilita default
+				comboBox3->Text = "em Reais (R$)";
+				comboBox3->BackColor = System::Drawing::SystemColors::Window;
+				comboBox3->Enabled = true;
+				//habilita textBox8
+				habiDesabTextBox(1, 8);
+				//habilita textBox8
+				habiDesabTextBox(1, 9);
+			}
+			else {
+				habilitaRB2();
+			}
+		}
+
+		System::Void habilitaRB2() {
+
+			//habilitaRB2
+			if (radioButton2->Checked == true) {
+				radioButton1->Checked = false;
+
+				//limpa comboBox3
+				comboBox3->Text = "               ";
+				comboBox3->BackColor = System::Drawing::Color::MediumAquamarine;
+				comboBox3->Enabled = false;
+
+				//limpa textBox8 e seus resultados parciais
+				habiDesabTextBox(0, 8);
+				//limpa textBox9 e seus resultados parciais
+				habiDesabTextBox(0, 9);
+				//limpa textBox10 e seus resultados parciais
+				habiDesabTextBox(0, 10);
+
+
+				//habilita default
+				comboBox1->Enabled = true;
+				comboBox1->Text = "em porcentagem (%)";
+				comboBox1->BackColor = System::Drawing::SystemColors::Window;
+				//habilita textBox4
+				habiDesabTextBox(1, 4);
+			}
+			else {
+				habilitaRB1();
+			}
+		}
+
+		System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		}
+
+		System::Void Box1_Validating() {
+			erroBox1 = imprimeErros(1, "");
+
+			if (String::IsNullOrEmpty(this->textBox1->Text)) { // checa se vazio
+				erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
+			}
+			else {
+				if (!Regex::IsMatch(this->textBox1->Text, numero_real)) {
+					erroBox1 = imprimeErros(1, FORMATO_MOEDA);
+				}
+				else {
+					if ((Convert::ToDouble(this->textBox1->Text)) == 0) {
+						erroBox1 = imprimeErros(1, CAMPO_NAO_ZERO);
+					}
+					else if ((Convert::ToDouble(this->textBox1->Text)) < 0) {
+						erroBox1 = imprimeErros(1, POSITIVO);
+					}
+				}
+			}
+		}
+
+		System::Void textBox1_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box1_Validating();
+		}
+
+		System::Void Box2_Validating() {
+			erroBox2 = imprimeErros(2, "");
+
+			if (String::IsNullOrEmpty(this->textBox2->Text)) {
+				if (this->comboBox2->SelectedIndex != 1) {
 					erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
 				}
 			}
-			break;
-		case 4:
-			if (hd == 0) { // desabilita textBox4
-				textBox4->Enabled = false;
-				textBox4->BackColor = System::Drawing::Color::MediumAquamarine;
-				textBox4->Text = "";
-				erroBox4 = imprimeErros(4, "");
-				limpaResultParciais(4);
+			else {
+				if (!Regex::IsMatch(this->textBox2->Text, numero_real)) {
+					erroBox2 = imprimeErros(2, FORMATO_MOEDA);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox2->Text) == 0) {
+						erroBox2 = imprimeErros(2, CAMPO_NAO_ZERO);
+					}
+					if (Convert::ToDouble(this->textBox2->Text) < 0) {
+						erroBox2 = imprimeErros(2, POSITIVO);
+					}
+				}
 			}
-			else { //habilita
-				textBox4->Enabled = true;
-				textBox4->BackColor = System::Drawing::SystemColors::Window;
+		}
+
+		System::Void textBox2_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box2_Validating();
+		}
+
+		System::Void Box3_Validating() {
+			erroBox3 = imprimeErros(3, "");
+
+			if (!String::IsNullOrEmpty(this->textBox3->Text)) {
+				if (!Regex::IsMatch(this->textBox3->Text, numero_real)) {
+					erroBox3 = imprimeErros(3, CAMPO_NUMERICO);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox3->Text) < 0) {
+						erroBox3 = imprimeErros(3, POSITIVO);
+					}
+				}
 			}
-			break;
-		case 6:
-			if (hd == 0) { // desabilita textBox6
-				textBox6->Enabled = false;
-				textBox6->BackColor = System::Drawing::Color::MediumAquamarine;
-				textBox6->Text = "";
-				erroBox6 = imprimeErros(6, "");
-				limpaResultParciais(6);
+		}
+
+		System::Void textBox3_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box3_Validating();
+		}
+
+		System::Void Box4_Validating() {
+			erroBox4 = imprimeErros(4, "");
+
+			if (!String::IsNullOrEmpty(this->textBox4->Text)) {
+				if (!Regex::IsMatch(this->textBox4->Text, numero_real)) {
+					erroBox4 = imprimeErros(4, CAMPO_NUMERICO);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox4->Text) < 0) {
+						erroBox4 = imprimeErros(4, POSITIVO);
+					}
+				}
 			}
-			else { //habilita
-				textBox6->Enabled = true;
-				textBox6->BackColor = System::Drawing::SystemColors::Window;
+		}
+
+		System::Void textBox4_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box4_Validating();
+		}
+
+		System::Void Box5_Validating() {
+			erroBox5 = imprimeErros(5, "");
+
+			if (!String::IsNullOrEmpty(this->textBox5->Text)) {
+				if (!Regex::IsMatch(this->textBox5->Text, numero_real)) {
+					erroBox5 = imprimeErros(5, CAMPO_NUMERICO);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox5->Text) < 0) {
+						erroBox5 = imprimeErros(5, POSITIVO);
+					}
+				}
 			}
-			break;
-		case 7:
-			if (hd == 0) { // desabilita textBox7
-				textBox7->Enabled = false;
-				textBox7->BackColor = System::Drawing::Color::MediumAquamarine;
-				textBox7->Text = "";
-				erroBox7 = imprimeErros(7, "");
-				limpaResultParciais(7);
+		}
+
+		System::Void textBox5_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box5_Validating();
+		}
+
+		System::Void Box6_Validating() {
+			erroBox6 = imprimeErros(6, "");
+
+			if (!String::IsNullOrEmpty(this->textBox6->Text)) {
+				if (!Regex::IsMatch(this->textBox6->Text, numero_real)) {
+					erroBox6 = imprimeErros(6, FORMATO_MOEDA);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox6->Text) < 0) {
+						erroBox6 = imprimeErros(6, POSITIVO);
+					}
+				}
 			}
-			else { //habilita
-				textBox7->Enabled = true;
-				textBox7->BackColor = System::Drawing::SystemColors::Window;
-				if (String::IsNullOrEmpty(this->textBox7->Text)) {
+
+		}
+
+		System::Void textBox6_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box6_Validating();
+		}
+
+		System::Void Box7_Validating() {
+			erroBox7 = imprimeErros(7, "");
+
+			if (String::IsNullOrEmpty(this->textBox7->Text)) {
+				if (this->comboBox2->SelectedIndex == 1) {
 					erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
 				}
 			}
-			break;
-		case 8:
-			if (hd == 0) { // desabilita textBox8
-				textBox8->Text = L"";
-				textBox8->Enabled = false;
-				textBox8->BackColor = System::Drawing::Color::MediumAquamarine;
-				erroBox8 = imprimeErros(8, "");
-				limpaResultParciais(8);
+			else {
+				if (!Regex::IsMatch(this->textBox7->Text, numero_real)) {
+					erroBox7 = imprimeErros(7, CAMPO_NUMERICO);
+				}
+				else {
+					if ((Convert::ToDouble(this->textBox7->Text)) == 0) {
+						erroBox7 = imprimeErros(7, CAMPO_NAO_ZERO);
+					}
+					if (Convert::ToDouble(this->textBox7->Text) < 0) {
+						erroBox7 = imprimeErros(7, POSITIVO);
+					}
+				}
 			}
-			else { //habilita
-				textBox8->Enabled = true;
-				textBox8->BackColor = System::Drawing::SystemColors::Window;
-				erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
+		}
+
+		System::Void textBox7_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box7_Validating();
+		}
+
+		System::Void Box8_Validating() {
+			erroBox8 = imprimeErros(8, "");
+
+			if (String::IsNullOrEmpty(this->textBox8->Text)) {
+				if (radioButton1->Checked == true) {
+					erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
+				}
 			}
-			break;
-		case 9:
-			if (hd == 0) { // desabilita textBox9
-				textBox9->Text = L"";
-				textBox9->Enabled = false;
-				textBox9->BackColor = System::Drawing::Color::MediumAquamarine;
-				erroBox9 = imprimeErros(9, "");
-				limpaResultParciais(9);
+			else {
+				if (!Regex::IsMatch(this->textBox8->Text, numero_real)) {
+					erroBox8 = imprimeErros(8, FORMATO_MOEDA);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox8->Text) < 0) {
+						erroBox8 = imprimeErros(8, POSITIVO);
+					}
+				}
 			}
-			else { //habilita
-				textBox9->Enabled = true;
-				textBox9->BackColor = System::Drawing::SystemColors::Window;
-				if (String::IsNullOrEmpty(this->textBox9->Text)) {
+		}
+
+		System::Void textBox8_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box8_Validating();
+		}
+
+		System::Void Box9_Validating() {
+			double valorC = 0;
+			double valorV = 0;
+
+			erroBox9 = imprimeErros(9, "");
+
+			if (String::IsNullOrEmpty(this->textBox9->Text)) {
+				if ((radioButton1->Checked == true) && (comboBox3->SelectedIndex != 1)) {
 					erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
 				}
 			}
-			break;
-		case 10:
-			if (hd == 0) { // desabilita textBox10
-				textBox10->Text = L"";
-				textBox10->Enabled = false;
-				textBox10->BackColor = System::Drawing::Color::MediumAquamarine;
-				erroBox10 = imprimeErros(10, "");
-				limpaResultParciais(10);
-			}
-			else { //habilita
-				textBox10->Enabled = true;
-				textBox10->BackColor = System::Drawing::SystemColors::Window;
-				if (String::IsNullOrEmpty(this->textBox10->Text)) {
-					erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
-				}
-			}
-			break;
-		default:
-			break;
-		}
-		return;
-	}
-
-	System::Void limpaResultParciais(int box_number) {
-		 switch (box_number) {
-		 case 1:
-			 label12->Text = L"";
-			 if (comboBox2->SelectedIndex == 1) {
-				 label40->Text = L"";
-				 label17->Text = L"";
-				 label25->Text = L"";
-				 label26->Text = L"";
-			 }
-			 break;
-		 case 2:
-			 label12->Text = L"";
-			 label17->Text = L"";
-			 label25->Text = L"";
-			 label26->Text = L"";
-			 break;
-		 case 3:
-			 label17->Text = L"";
-			 break;
-		 case 4:
-			 label25->Text = L"";
-			 break;
-		 case 5:
-			 break;
-		 case 6:
-			 label26->Text = L"";
-			 break;
-		 case 7:
-			 label40->Text = L""; // limpa qtd a ser comprada, em reais
-			 label17->Text = L"";
-			 label25->Text = L"";
-			 label26->Text = L"";
-			 break;
-		 case 8:
-			 label60->Text = L"";
-			 if (comboBox3->SelectedIndex == 1) {
-				 label63->Text = L"";
-			 }
-			 break;
-		 case 9:
-			 label60->Text = L"";
-			 break;
-		 case 10:
-			 label63->Text = L"";
-			 break;	 
-		 default:
-			 break;
-		 }
-		 return;
-	}
-	
-	System::Void limpaResultFinais() {
-		 label22->Text = L"";
-		 label10->Text = L"";
-		 label11->Text = L"";
-		 label38->Text = L"";
-
-		 if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
-			 (erroBox4 == 0) && (erroBox5 == 0) && (erroBox6 == 0) &&
-			 (erroBox7 == 0)) {
-			 label8->Text = L"";
-		 }
-	}
-	
-	System::Void limpaResultFinais2() {
-		 label50->Text = L"";
-		 label58->Text = L"";
-		 label22->Text = L"";
-		 label66->Text = L"";
-
-		 if ((erroBox8 == 0) && (erroBox9 == 0) && (erroBox10 == 0)) {
-			 label8->Text = L"";
-		 }
-	}
-	
-	double checaTextBox(int box_number, int label_number, double valor_entrada, String ^ formato) {
-				 double valor_saida = 0;
-				 double calculo = 0;
-				 double aux1, aux2 = 0;
-
-				 switch (box_number) {
-				 case 1:
-					 if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
-						 if (label_number == 12) {
-							 valor_saida = Convert::ToDouble(this->textBox1->Text); //moedaR
-							 calculo = valor_entrada / valor_saida;
-							 label12->Text = System::String::Format(formato, calculo);
-						 }
-						 if (label_number == 40) {
-							 valor_saida = Convert::ToDouble(this->textBox1->Text); //moedaR
-							 calculo = valor_saida * valor_entrada;
-							 label40->Text = System::String::Format(formato, calculo);
-						 }
-					 }
-					 else {
-						 limpaResultParciais(1);
-					 }
-					 break;
-				 case 2:
-					 if (this->comboBox2->SelectedIndex != 1) {
-						 if (!String::IsNullOrEmpty(this->textBox2->Text) && (erroBox2 == 0)) {
-							 valor_saida = Convert::ToDouble(this->textBox2->Text); //montanteR
-							 if (label_number == 12) {
-								 calculo = valor_saida / valor_entrada;
-								 label12->Text = System::String::Format(formato, calculo);
-							 }
-							 if (label_number == 17) {
-								 calculo = (valor_entrada / 100)*valor_saida;
-								 label17->Text = System::String::Format(formato, calculo);
-							 }
-							 if (label_number == 25) {
-								 calculo = (valor_entrada / 100)*valor_saida;
-								 label25->Text = System::String::Format(formato, calculo);
-							 }
-							 if (label_number == 26) {
-								 calculo = (valor_entrada / valor_saida) * 100;
-								 label26->Text = System::String::Format(formato, calculo);
-							 }
-						 }
-						 else {
-							 limpaResultParciais(2);
-						 }
-					 }
-					 break;
-				 case 3:
-					 if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
-						 valor_saida = Convert::ToDouble(this->textBox3->Text); //taxaC
-						 calculo = (valor_saida / 100)*valor_entrada;
-						 label17->Text = System::String::Format(formato, calculo);
-					 }
-					 else {
-						 limpaResultParciais(3);
-					 }
-					 break;
-				 case 4:
-					 if (!String::IsNullOrEmpty(this->textBox4->Text) && (erroBox4 == 0)) {
-						 valor_saida = Convert::ToDouble(this->textBox4->Text); //lucro
-						 calculo = (valor_saida / 100)*valor_entrada;
-						 label25->Text = System::String::Format(formato, calculo);
-					 }
-					 else {
-						 limpaResultParciais(4);
-					 }
-					 break;
-				 case 6:
-					 if (!String::IsNullOrEmpty(this->textBox6->Text) && (erroBox6 == 0)) {
-						 valor_saida = Convert::ToDouble(this->textBox6->Text); // lucroR
-						 calculo = (valor_saida / valor_entrada) * 100;
-						 label26->Text = System::String::Format(formato, calculo);
-					 }
-					 else {
-						 limpaResultParciais(6);
-					 }
-					 break;
-				 case 7:
-					 if (this->comboBox2->SelectedIndex == 1) {
-						 if (!String::IsNullOrEmpty(this->textBox7->Text) && (erroBox7 == 0)) {
-							 if (!String::IsNullOrEmpty(this->textBox1->Text) && (erroBox1 == 0)) {
-								 aux1 = Convert::ToDouble(this->textBox1->Text);
-								 aux2 = Convert::ToDouble(this->textBox7->Text);
-								 if (label_number == 40) {
-									 valor_saida = aux2; //qtd_moeda
-									 calculo = valor_entrada * valor_saida;
-									 label40->Text = System::String::Format(formato, calculo);
-								 }
-								 if (label_number == 25) {
-									 valor_saida = aux1 * aux2; //// qtd_reais
-									 calculo = (valor_entrada / 100)*valor_saida;
-									 label25->Text = System::String::Format(formato, calculo);
-								 }
-								 if (label_number == 26) {
-									 valor_saida = aux1 * aux2; //// qtd_reais
-									 calculo = (valor_entrada / valor_saida) * 100;
-									 label26->Text = System::String::Format(formato, calculo);
-								 }
-								 if (label_number == 17) {
-									 valor_saida = aux1 * aux2; //// qtd_reais
-									 calculo = (valor_entrada / 100)*valor_saida;
-									 label17->Text = System::String::Format(formato, calculo);
-								 }
-							 }
-							 else {
-								 limpaResultParciais(1);
-							 }
-						 }
-						 else {
-							 limpaResultParciais(7);
-						 }
-					 }
-					 break;
-				 case 8:
-					 if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
-						 valor_saida = Convert::ToDouble(this->textBox8->Text); //qtd_moedaV
-						 if (label_number == 60) {
-							 calculo = valor_entrada / valor_saida;
-							 label60->Text = System::String::Format(formato, calculo);
-						 }
-						 if (label_number == 63) {
-							 calculo = valor_entrada * valor_saida;
-							 label63->Text = System::String::Format(formato, calculo);
-						 }
-					 }
-					 else {
-						 limpaResultParciais(8);
-					 }
-					 break;
-				 case 9:
-					 if (this->comboBox3->SelectedIndex != 1) {
-						 if (!String::IsNullOrEmpty(this->textBox9->Text) && (erroBox9 == 0)) {
-							 valor_saida = Convert::ToDouble(this->textBox9->Text); //qtd_moedaV
-							 if (label_number == 60) {
-								 calculo = valor_saida / valor_entrada;
-								 label60->Text = System::String::Format(formato, calculo);
-							 }
-						 }
-						 else {
-							 limpaResultParciais(9);
-						 }
-					 }
-					 break;
-				 case 10:
-					 if (this->comboBox3->SelectedIndex == 1) {
-						 if (!String::IsNullOrEmpty(this->textBox10->Text) && (erroBox10 == 0)) {
-							 if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
-								 aux2 = Convert::ToDouble(this->textBox10->Text);
-								 if (label_number == 63) {
-									 valor_saida = aux2; //qtd_moedaV
-									 calculo = valor_entrada * valor_saida;
-									 label63->Text = System::String::Format(formato, calculo);
-								 }
-							 }
-							 else {
-								 limpaResultParciais(8);
-							 }
-						 }
-						 else {
-							 limpaResultParciais(10);
-						 }
-					 }
-					 break;
-				 default:
-					 break;
-				 }
-
-				 return valor_saida;
-	}
-
-	int inicializaErros_Resultados(int box_number) {
-				 switch (box_number) {
-				 case 1:
-					 errorProviderBox1->Clear();
-					 limpaResultParciais(1);
-					 limpaResultFinais();
-					 break;
-				 case 2:
-					 errorProviderBox2->Clear();
-					 limpaResultParciais(2);
-					 limpaResultFinais();
-					 break;
-				 case 3:
-					 errorProviderBox3->Clear();
-					 limpaResultParciais(3);
-					 limpaResultFinais();
-					 break;
-				 case 4:
-					 errorProviderBox4->Clear();
-					 limpaResultParciais(4);
-					 limpaResultFinais();
-					 break;
-				 case 5:
-					 errorProviderBox5->Clear();
-					 limpaResultParciais(5);
-					 limpaResultFinais();
-					 break;
-				 case 6:
-					 errorProviderBox6->Clear();
-					 limpaResultParciais(6);
-					 limpaResultFinais();
-					 break;
-				 case 7:
-					 errorProviderBox7->Clear();
-					 limpaResultParciais(7);
-					 limpaResultFinais();
-					 break;
-				 case 8:
-					 errorProviderBox8->Clear();
-					 limpaResultParciais(8);
-					 limpaResultFinais2();
-					 break;
-				 case 9:
-					 errorProviderBox9->Clear();
-					 limpaResultParciais(9);
-					 limpaResultFinais2();
-					 break;
-				 case 10:
-					 errorProviderBox10->Clear();
-					 limpaResultParciais(10);
-					 limpaResultFinais2();
-					 break;
-				 default:
-					 break;
-				 }
-
-				 limpaResultFinais();
-				 return 0;
-	}
-
-	int imprimeErros(int box_number, String ^ msg) {
-		 switch (box_number) {
-		 case 1:
-			 if (msg->CompareTo("") == 0) { errorProviderBox1->Clear(); }
-			 else { errorProviderBox1->SetError(textBox1, msg); }
-			 break;
-		 case 2:
-			 if (msg->CompareTo("") == 0) { errorProviderBox2->Clear(); }
-			 else { errorProviderBox2->SetError(textBox2, msg); }
-			 break;
-		 case 3:
-			 if (msg->CompareTo("") == 0) { errorProviderBox3->Clear(); }
-			 else { errorProviderBox3->SetError(textBox3, msg); }
-			 break;
-		 case 4:
-			 if (msg->CompareTo("") == 0) { errorProviderBox4->Clear(); }
-			 else { errorProviderBox4->SetError(textBox4, msg); }
-			 break;
-		 case 5:
-			 if (msg->CompareTo("") == 0) { errorProviderBox5->Clear(); }
-			 else { errorProviderBox5->SetError(textBox5, msg); }
-			 break;
-		 case 6:
-			 if (msg->CompareTo("") == 0) { errorProviderBox6->Clear(); }
-			 else { errorProviderBox6->SetError(textBox6, msg); }
-			 break;
-		 case 7:
-			 if (msg->CompareTo("") == 0) { errorProviderBox7->Clear(); }
-			 else { errorProviderBox7->SetError(textBox7, msg); }
-			 break;
-		 case 8:
-			 if (msg->CompareTo("") == 0) { errorProviderBox8->Clear(); }
-			 else { errorProviderBox8->SetError(textBox8, msg); }
-			 break;
-		 case 9:
-			 if (msg->CompareTo("") == 0) { errorProviderBox9->Clear(); }
-			 else { errorProviderBox9->SetError(textBox9, msg); }
-			 break;
-		 case 10:
-			 if (msg->CompareTo("") == 0) { errorProviderBox10->Clear(); }
-			 else { errorProviderBox10->SetError(textBox10, msg); }
-			 break;
-		 default:
-			 break;
-		 }
-		 if (msg->CompareTo("") == 0) {
-			 return 0;
-		 }
-		 else {
-			 return 1;
-		 }
-	}
-	
-	System::Void calculaRadioButton1() {
-		 double M, TV, TC, MR, MV, DV, DC, LP, QMV = 0;
-		 double valorVenda = 0;
-		 double valorizacao = 0;
-		 double Lucro = 0;
-
-		  if (!String::IsNullOrEmpty(this->textBox1->Text)) {
-			 if (erroBox1 == 0) {
-				 MR = Convert::ToDouble(this->textBox1->Text);
-			 }
-		 }
-		 else {
-			 erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox2->Text)) {
-			 if (erroBox2 == 0) {
-				 M = Convert::ToDouble(this->textBox2->Text);
-			 }
-		 }
-		 else {
-			 if (this->comboBox2->SelectedIndex != 1) {
-				 erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
-			 }
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox7->Text)) {
-			 if ((erroBox7 == 0)&&(erroBox1 == 0)) {
-				 M = Convert::ToDouble(this->label40->Text);
-			 }
-		 }
-		 else {
-			 if (this->comboBox2->SelectedIndex == 1) {
-				 erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
-			 }
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
-			 TC = Convert::ToDouble(this->textBox3->Text);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox5->Text) && (erroBox5 == 0)) {
-			 TV = Convert::ToDouble(this->textBox5->Text);
-		 }
-
-		 if (radioButton1->Checked == true) {
-			 if (!String::IsNullOrEmpty(this->textBox8->Text) && (erroBox8 == 0)) {
-				 if (erroBox1 == 0) {
-					 MV = Convert::ToDouble(this->textBox8->Text);
-					 valorizacao = ((MV - MR) * 100) / MR;
-				 }
-			 }
-			 else {
-				 erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
-			 }
-
-			 if (!String::IsNullOrEmpty(this->textBox9->Text)) {
-				 if ((erroBox1 == 0)&&(erroBox8==0)&&(erroBox9 == 0)) {
-					 valorVenda = Convert::ToDouble(this->textBox9->Text);
-					 QMV = Convert::ToDouble(this->label60->Text);
-				 }
-			 }
-			 else {
-				 if (this->comboBox3->SelectedIndex != 1) {
-					 erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
-				 }
-			 }
-
-			 if (!String::IsNullOrEmpty(this->textBox10->Text)) {
-				 if ((erroBox1 == 0)&&(erroBox8==0)&&(erroBox10 == 0)) {
-					 valorVenda = Convert::ToDouble(this->label63->Text);
-					 QMV = Convert::ToDouble(this->textBox10->Text);
-				 }
-			 }
-			 else {
-				 if (this->comboBox3->SelectedIndex == 1) {
-					 erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
-				 }
-			 }
-		 }
-		 if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
-			 (erroBox5 == 0) && (erroBox7 == 0) && (erroBox8 == 0) &&
-			 (erroBox9 == 0) && (erroBox10 == 0)) {
-			 label8->Text = L"";
-			 DV = (TV / 100)*valorVenda;
-			 DC = (TC / 100) * M;
-			 Lucro = ((MV-MR)*QMV) - DC - DV;
-			 LP = ((100*(((MV - MR)*QMV) - DC - DV)) / (QMV*MR));
-			 if (TV!=0) {
-				 label22->Text = System::String::Format("{0,12:N2}", DV);
-			 }
-			 label50->Text = System::String::Format("{0,12:N2}", Lucro);
-			 label66->Text = System::String::Format("{0,12:N5}", LP);
-			 label58->Text = System::String::Format("{0,12:N5}", valorizacao);
-			 if (Lucro < 0) {
-				 this->label50->ForeColor = System::Drawing::Color::Red;
-				 this->label66->ForeColor = System::Drawing::Color::Red;
-			 }
-			 else {
-				 this->label50->ForeColor = System::Drawing::SystemColors::ControlText;
-				 this->label66->ForeColor = System::Drawing::SystemColors::ControlText;
-			 }
-		 }
-		 else {
-			 label8->Text = ERRO_GERAL;
-		 }
-	}
-
-	System::Void calculaRadioButton2() {
-		 double L, TC, M, TV, MR, LR, LM = 0;
-		 double valorVenda = 0;
-		 double valorizacao = 0;
-
-		 if (!String::IsNullOrEmpty(this->textBox1->Text)) {
-			 if (erroBox1 == 0) {
-				 MR = Convert::ToDouble(this->textBox1->Text);
-			 }
-		 }
-		 else {
-			 erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox2->Text)) {
-			 if (erroBox2 == 0) {
-				 M = Convert::ToDouble(this->textBox2->Text);
-				 valorVenda = M;
-			 }
-		 }
-		 else {
-			 if (this->comboBox2->SelectedIndex == 0) {
-				 erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
-			 }
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox7->Text)) {
-			 if (erroBox7 == 0) {
-				 M = Convert::ToDouble(this->label40->Text);
-				 valorVenda = M;
-			 }
-		 }
-		 else {
-			 if (this->comboBox2->SelectedIndex == 1) {
-				 erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
-			 }
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox3->Text) && (erroBox3 == 0)) {
-			 TC = Convert::ToDouble(this->textBox3->Text);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox5->Text) && (erroBox5 == 0)) {
-			 TV = Convert::ToDouble(this->textBox5->Text);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox4->Text) && (erroBox4 == 0)) {
-			 L = Convert::ToDouble(this->textBox4->Text);
-			 valorVenda = ((100 + L + TC)*M) / (100 - TV);
-		 }
-
-		 if (!String::IsNullOrEmpty(this->textBox6->Text) && (erroBox6 == 0)) {
-			 LR = Convert::ToDouble(this->textBox6->Text);
-			 LM = (LR / M) * 100;
-			 valorVenda = ((100 + LM + TC)*M) / (100 - TV);
-		 }
-
-		 if ((erroBox1 == 0) && (erroBox2 == 0) && (erroBox3 == 0) &&
-			 (erroBox4 == 0) && (erroBox5 == 0) && (erroBox6 == 0) &&
-			 (erroBox7 == 0)) {
-			 label8->Text = L"";
-			 label10->Text = System::String::Format("{0,12:N2}", valorVenda);
-			 label22->Text = System::String::Format("{0,12:N2}", (TV / 100)*valorVenda);
-			 label11->Text = System::String::Format("{0,12:N2}", valorVenda / (M / MR));
-			 valorizacao = ((((valorVenda / (M / MR)) - MR) * 100) / MR);
-			 label38->Text = System::String::Format("{0,12:N5}", valorizacao);
-		 }
-		 else {
-			 label8->Text = ERRO_GERAL;
-		 }
-	}
-
-	System::Void habilitaRB1() {
-
-		 //habilitaRB1
-		 if (radioButton1->Checked == true) {
-			 radioButton2->Checked = false;
-
-			 //limpa comboBox1
-			 comboBox1->Text = "";
-			 comboBox1->BackColor = System::Drawing::Color::MediumAquamarine;
-			 comboBox1->Enabled = false;
-
-             //limpa textBox4 e seus resultados parciais
-			 habiDesabTextBox(0, 4);
-			 //limpa textBox6 e seus resultados parciais
-			 habiDesabTextBox(0, 6);
-
-			 //habilita default
-			 comboBox3->Text = "em Reais (R$)";
-			 comboBox3->BackColor = System::Drawing::SystemColors::Window;
-			 comboBox3->Enabled = true;
-			 //habilita textBox8
-			 habiDesabTextBox(1, 8);
-			 //habilita textBox8
-			 habiDesabTextBox(1, 9);				 
-		 }
-		 else {
-			 habilitaRB2();
-		 }
-	}
-				 
-	System::Void habilitaRB2() {
-
-		 //habilitaRB2
-		 if (radioButton2->Checked == true) {
-			 radioButton1->Checked = false;
-
-			 //limpa comboBox3
-			 comboBox3->Text = "               ";
-			 comboBox3->BackColor = System::Drawing::Color::MediumAquamarine;
-			 comboBox3->Enabled = false;
-
-			 //limpa textBox8 e seus resultados parciais
-			 habiDesabTextBox(0, 8);
-			 //limpa textBox9 e seus resultados parciais
-			 habiDesabTextBox(0, 9);
-			 //limpa textBox10 e seus resultados parciais
-			 habiDesabTextBox(0, 10);
-
-
-			 //habilita default
-			 comboBox1->Enabled = true;
-			 comboBox1->Text = "em porcentagem (%)";
-			 comboBox1->BackColor = System::Drawing::SystemColors::Window;
-			 //habilita textBox4
-			 habiDesabTextBox(1, 4);
-		 }
-		 else {
-			 habilitaRB1();
-		 }
-	}
-	
-	System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-	}
-	
-	System::Void textBox1_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox1 = imprimeErros(1, "");
-
-		 if (String::IsNullOrEmpty(this->textBox1->Text)) { // checa se vazio
-			erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
-		 }
-		 else {
-			 if (!Regex::IsMatch(this->textBox1->Text, numero_real)) {
-				 erroBox1 = imprimeErros(1, FORMATO_MOEDA);
-			 }
-			 else {
-				 if ((Convert::ToDouble(this->textBox1->Text)) == 0) {
-					 erroBox1 = imprimeErros(1, CAMPO_NAO_ZERO);
-				 }
-				 if ((Convert::ToDouble(this->textBox1->Text)) < 0) {
-					 erroBox1 = imprimeErros(1, POSITIVO);
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox2_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox2 = imprimeErros(2, "");
-
-		 if (String::IsNullOrEmpty(this->textBox2->Text)) {
-			 if (this->comboBox2->SelectedIndex != 1) {
-				 erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
-			 }
-		 }
-		 else {
-			 if (!Regex::IsMatch(this->textBox2->Text, numero_real)) {
-				 erroBox2 = imprimeErros(2, FORMATO_MOEDA);
-			 }
-			 else {
-				 if (Convert::ToDouble(this->textBox2->Text) == 0) {
-					 erroBox2 = imprimeErros(2, CAMPO_NAO_ZERO);
-				 }
-				 if (Convert::ToDouble(this->textBox2->Text) < 0) {
-					 erroBox2 = imprimeErros(2, POSITIVO);
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox3_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox3 = imprimeErros(3, "");
-
-		 if (!String::IsNullOrEmpty(this->textBox3->Text)) {
-			 if (!Regex::IsMatch(this->textBox3->Text, numero_real)) {
-				 erroBox3 = imprimeErros(3, CAMPO_NUMERICO);
-			 }
-			 else {
-				 if (Convert::ToDouble(this->textBox3->Text) < 0) {
-					 erroBox3 = imprimeErros(3, POSITIVO);
-				 }
-			 }
-		 }
-	}
-	
-	System::Void textBox4_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox4 = imprimeErros(4, "");
-
-		 if (!String::IsNullOrEmpty(this->textBox4->Text)) {
-			 if (!Regex::IsMatch(this->textBox4->Text, numero_real)) {
-				 erroBox4 = imprimeErros(4, CAMPO_NUMERICO);
-			 }
-			 else {
-				 if (Convert::ToDouble(this->textBox4->Text) < 0) {
-					 erroBox4 = imprimeErros(4, POSITIVO);
-				 }
-			 }
-		 }
-	}
-
-	System::Void textBox5_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		erroBox5 = imprimeErros(5, "");
-
-		if (!String::IsNullOrEmpty(this->textBox5->Text)) {
-			if (!Regex::IsMatch(this->textBox5->Text, numero_real)) {
-				erroBox5 = imprimeErros(5, CAMPO_NUMERICO);
-			}
 			else {
-				if (Convert::ToDouble(this->textBox5->Text) < 0) {
-					erroBox5 = imprimeErros(5, POSITIVO);
-				}
-			}
-		}
-	}
-
-	System::Void textBox6_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox6 = imprimeErros(6, "");
-
-		 if (!String::IsNullOrEmpty(this->textBox6->Text)) {
-			 if (!Regex::IsMatch(this->textBox6->Text, numero_real)) {
-				 erroBox6 = imprimeErros(6, FORMATO_MOEDA);
-			 }
-			 else {
-				 if (Convert::ToDouble(this->textBox6->Text) < 0) {
-					 erroBox6 = imprimeErros(6, POSITIVO);
-				 }
-			 }
-		 }
-	}
-
-	System::Void textBox7_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		erroBox7 = imprimeErros(7, "");
-
-		if (String::IsNullOrEmpty(this->textBox7->Text)) {
-			if (this->comboBox2->SelectedIndex == 1) {
-				erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
-			}
-		}
-		else {
-			if (!Regex::IsMatch(this->textBox7->Text, numero_real)) {
-				erroBox7 = imprimeErros(7, CAMPO_NUMERICO);
-			}
-			else {
-				if ((Convert::ToDouble(this->textBox7->Text)) == 0) {
-					erroBox7 = imprimeErros(7, CAMPO_NAO_ZERO);
-				}
-				if (Convert::ToDouble(this->textBox7->Text) < 0) {
-					erroBox7 = imprimeErros(7, POSITIVO);
-				}
-			}
-		}
-	}
-
-	System::Void textBox8_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-
-		 erroBox8 = imprimeErros(8, "");
-
-		 if (String::IsNullOrEmpty(this->textBox8->Text)) {
-			 if (radioButton1->Checked == true)  {
-				 erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
-			 }
-		 }
-		 else {
-			 if (!Regex::IsMatch(this->textBox8->Text, numero_real)) {
-				 erroBox8 = imprimeErros(8, FORMATO_MOEDA);
-			 }
-			 if (Convert::ToDouble(this->textBox8->Text) < 0) {
-				 erroBox8 = imprimeErros(8, POSITIVO);
-			 }
-		 }
-	}
-	
-	System::Void textBox9_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-		 double valorC = 0;
-		 double valorV = 0;
-
-		 erroBox9 = imprimeErros(9, "");
-
-		 if (String::IsNullOrEmpty(this->textBox9->Text)) {
-			 if ((radioButton1->Checked == true) && (comboBox3->SelectedIndex != 1)) {
-				 erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
-			 }
-		 }
-		 else {
 				if (!Regex::IsMatch(this->textBox9->Text, numero_real)) {
 					erroBox9 = imprimeErros(9, FORMATO_MOEDA);
 				}
@@ -2562,49 +2544,131 @@ private: System::Windows::Forms::Panel^  panel5;
 						}
 					}
 				}
-		 }
-	}
-	
-	System::Void textBox10_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-		 double valorV = 0;
-		 double valorC = 0;
+			}
+		}
 
-		 erroBox10 = imprimeErros(10, "");
+		System::Void textBox9_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box9_Validating();
+		}
 
-		 if (String::IsNullOrEmpty(this->textBox10->Text)) {
-			 if ((radioButton1->Checked == true) && (this->comboBox3->SelectedIndex == 1)) {
-				 erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
-			 }
-		 }
-		 else {
-			 if (!Regex::IsMatch(this->textBox10->Text, numero_real)) {
-				 erroBox10 = imprimeErros(10, CAMPO_NUMERICO);
-			 }
-			 else { 
-				 if (Convert::ToDouble(this->textBox10->Text) == 0) {
-					 erroBox10 = imprimeErros(10, CAMPO_NAO_ZERO);
-				 }
-				 else {
-					 if (Convert::ToDouble(this->textBox10->Text) < 0) {
-						 erroBox10 = imprimeErros(10, POSITIVO);
-					 }
-					 valorV = Convert::ToDouble(this->textBox10->Text);
-					 if (!String::IsNullOrEmpty(this->label12->Text)) {
-						 valorC = Convert::ToDouble(this->label12->Text);
-					 }
-					 if (!String::IsNullOrEmpty(this->textBox7->Text)) {
-						 valorC = Convert::ToDouble(this->textBox7->Text);
-					 }
-					 if (valorV > valorC) {
-						 erroBox10 = imprimeErros(10, VENDA_MAIORQ_COMPRA);
-					 }
-				 }
-			 }
-		 }
-	}
+		System::Void Box10_Validating() {
+			double valorV = 0;
+			double valorC = 0;
 
-	System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
-	}
+			erroBox10 = imprimeErros(10, "");
+
+			if (String::IsNullOrEmpty(this->textBox10->Text)) {
+				if ((radioButton1->Checked == true) && (this->comboBox3->SelectedIndex == 1)) {
+					erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
+				}
+			}
+			else {
+				if (!Regex::IsMatch(this->textBox10->Text, numero_real)) {
+					erroBox10 = imprimeErros(10, CAMPO_NUMERICO);
+				}
+				else {
+					if (Convert::ToDouble(this->textBox10->Text) == 0) {
+						erroBox10 = imprimeErros(10, CAMPO_NAO_ZERO);
+					}
+					else {
+						if (Convert::ToDouble(this->textBox10->Text) < 0) {
+							erroBox10 = imprimeErros(10, POSITIVO);
+						}
+						valorV = Convert::ToDouble(this->textBox10->Text);
+						if (!String::IsNullOrEmpty(this->label12->Text)) {
+							valorC = Convert::ToDouble(this->label12->Text);
+						}
+						if (!String::IsNullOrEmpty(this->textBox7->Text)) {
+							valorC = Convert::ToDouble(this->textBox7->Text);
+						}
+						if (valorV > valorC) {
+							erroBox10 = imprimeErros(10, VENDA_MAIORQ_COMPRA);
+						}
+					}
+				}
+			}
+		}
+
+		System::Void textBox10_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+			Box10_Validating();
+		}
+
+		System::Void LimpaTudo() {
+			this->textBox1->Text = L"";
+			this->textBox2->Text = L"";
+			this->textBox3->Text = L"";
+			this->textBox4->Text = L"";
+			this->textBox5->Text = L"";
+			this->textBox6->Text = L"";
+			this->textBox7->Text = L"";
+			this->textBox8->Text = L"";
+			this->textBox9->Text = L"";
+			this->textBox10->Text = L"";
+
+			//limpa variaveis globais
+			if (radioButton2->Checked == true) {
+				erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
+			}
+			else {
+				if (comboBox3->SelectedIndex == 1) {
+					erroBox1 = imprimeErros(1, CAMPO_OBRIGATORIO);
+				}
+				else {
+					erroBox1 = imprimeErros(1, "");
+				}
+			}
+			limpaResultParciais(1);
+
+			if (comboBox2->SelectedIndex == 0) {
+				erroBox2 = imprimeErros(2, CAMPO_OBRIGATORIO);
+				erroBox7 = imprimeErros(7, "");
+			}
+			else if (comboBox2->SelectedIndex == 1) {
+				erroBox2 = imprimeErros(2, "");
+				erroBox7 = imprimeErros(7, CAMPO_OBRIGATORIO);
+			}
+			else {
+				erroBox2 = imprimeErros(2, "");
+				erroBox7 = imprimeErros(7, "");
+			}
+			limpaResultParciais(2);
+			limpaResultParciais(7);
+
+			erroBox3 = imprimeErros(3, "");
+			limpaResultParciais(3);
+
+			erroBox4 = imprimeErros(4, "");
+			limpaResultParciais(4);
+
+			erroBox5 = imprimeErros(5, "");
+			limpaResultParciais(5);
+
+			erroBox6 = imprimeErros(6, "");
+			limpaResultParciais(6);
+
+			if (radioButton1->Checked == true) {
+				erroBox8 = imprimeErros(8, CAMPO_OBRIGATORIO);
+				if (comboBox3->SelectedIndex == 1) {
+					erroBox9 = imprimeErros(9, "");
+					erroBox10 = imprimeErros(10, CAMPO_OBRIGATORIO);
+				}
+				else {
+					erroBox10 = imprimeErros(10, "");
+					erroBox9 = imprimeErros(9, CAMPO_OBRIGATORIO);
+				}
+			}
+			limpaResultParciais(8);
+			limpaResultParciais(9);
+			limpaResultParciais(10);
+
+			limpaResultFinais();
+			limpaResultFinais2();
+		}
+
+		System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+			LimpaTudo();
+		}
+
 	};
 
 }
